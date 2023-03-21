@@ -1,0 +1,31 @@
+.content-form {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    width: 600px;
+    position: absolute;
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-top: 20px;
+    padding-bottom: 180px;
+    margin-top:80px;
+    left: 50%;
+    top: 50%;
+    color:#9c9898;
+    transform: translate(-50%,-50%);
+}
+
+.content-form .mb-3 {
+    margin-top: 70px;
+}
+
+.log-btn .btn {
+    background-color: #1b9cff;
+    border: 0 none;
+    font-weight: bold;
+    text-align: center;
+    width: 338.4px;
+    margin-top: 25px;
+    height:60px;
+    font-size: 20px;
+    padding-top: 13px;
+}

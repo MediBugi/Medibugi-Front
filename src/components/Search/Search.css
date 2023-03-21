@@ -1,0 +1,34 @@
+.addition {
+    width: 170px;
+}
+
+.basic {
+    width: 190px;
+}
+
+.name {
+    font-size: 14px;
+    color: #8c8c88;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.c3 .btn {
+    margin-top: 28px;
+    margin-left: 8px;
+    font-weight: bold;
+    background-color: #1b9cff;
+    border: 0 none;
+    border-radius: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.c1, .c2 {
+    margin-left: 8px;
+}
+
+.c1, .c2, .c3 {
+    margin-bottom: 38px;
+}

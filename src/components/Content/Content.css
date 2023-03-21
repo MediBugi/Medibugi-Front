@@ -1,0 +1,30 @@
+.content .c1, .c2, .c3 {
+    float: left;    
+}
+
+.content {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    margin-left: 250px;
+    margin-top: 100px;
+    width: 1053px;
+    float: left;
+    position: absolute;
+    padding: 4px;
+}
+
+.interest-doc {
+    font-weight: bold;
+    font-family: "나눔고딕";
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.search {
+    font-family: "나눔고딕";
+    font-size: 18px;
+    color:#0fa2f1;
+    margin-left: 8px;
+    margin-top: 18px;
+}
