@@ -13,7 +13,7 @@ function Mydoc() {
             <img src="img/doctor.png" width="100" height="100"/>
             
             <div >
-                <p className="name_doc">송슬기</p>
+                <p className="name_doc">dddddddd</p>
                 <p className="belong_doc">소속병원 : 신세계의원</p>
                 <p className="subject_doc">진료과목 : 외과</p>
                 </div>
