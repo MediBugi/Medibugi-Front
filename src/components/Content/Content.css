@@ -1,5 +1,6 @@
 .content .c1, .c2, .c3 {
-    float: left;    
+    float: left;   
+    margin-left: 30px; /* 약간 띄우기 */
 }
 
 .content {
@@ -11,6 +12,7 @@
     float: left;
     position: absolute;
     padding: 4px;
+    float: left; /* 나란히 정렬*/
 }
 
 .interest-doc {
@@ -27,4 +29,65 @@
     color:#0fa2f1;
     margin-left: 8px;
     margin-top: 18px;
+    margin-left: 30px; /* 약간 띄우기 */
+}
+
+.search_img {
+    width: 100px; 
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+.no-doc {
+    font-weight: bold;
+    text-align: center;
+    font-family: "나눔고딕";
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 0%;
+}
+
+.abcd {
+    text-align: center;
+    font-family: "나눔고딕";
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 5%;
+}
+
+.content_a {
+    margin-left: 5%;
+}
+
+.content_a > div {
+    float: left; /* 나란히 정렬*/
+}
+
+.content_a > img {
+    float: left; /* 나란히 정렬*/
+    margin-right: 3%;
+}
+
+.name_doc {
+    font-weight: bold;
+    font-family: "고딕";
+    font-size: 25px;
+    margin-bottom: 0%;
+}
+
+.belong_doc {
+    font-family: "고딕";
+    font-size: 15px;
+    margin-bottom: 0%;
+}
+
+.subject_doc{
+    font-family: "고딕";
+    font-size: 15px;
+    margin-bottom: 0%;
 }
