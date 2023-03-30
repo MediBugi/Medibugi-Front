@@ -1,11 +1,11 @@
 .p {
-    position: absolute;
-    margin-left: 250px;
-    margin-top: 55px;
-    z-index: 0;
-    color:white;
-    font-weight: bold;
-    font-size: 25px;
+  position: absolute;
+  margin-left: 250px;
+  margin-top: 55px;
+  z-index: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .log-p {
@@ -35,8 +35,19 @@
 }
 
 .main {
-    background-color: #20b1ff;
-    height: 150px;
-    position: relative;
-    z-index: -1;
+  background-color: #20b1ff;
+  height: 150px;
+  position: relative;
+  z-index: -1;
+}
+
+.info-main {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  margin-left: 250px;
+  margin-top: 100px;
+  width: 1053px;
+  float: left;
+  position: relative;
+  padding: 20px;
 }

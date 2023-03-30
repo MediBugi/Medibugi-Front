@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  margin: 40px auto 30px;
+  border-top: 1px solid #dbdbdb;
+  padding: 27px 0 24px;
+}
+
+.content-flex {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 100px;
+}
+
+.flex1 {
+  justify-content: space-between;
+}
+
+.flex2 {
+  flex: 1 1 auto;
+}
+
+.gap {
+  gap: 50px;
+}
+
+.gap1 {
+  gap: 100px;
+}
+
+.font-size {
+  font-size: 20px;
+}
+
+.margin {
+  margin: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.map-img {
+  width: 500px;
+}
