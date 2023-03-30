@@ -9,16 +9,29 @@
 }
 
 .log-p {
-  position: absolute;
-  color: #555;
-  font-weight: bold;
-  font-size: 28px;
-  width: 100px;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  margin-left: -50px;
-  margin-top: -135px;
+    position: absolute;
+    color:#555;
+    font-weight: bold;
+    font-size: 28px;
+    width: 100px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top:-170px;
+}
+
+.sign-p {
+    position: absolute;
+    color:#555;
+    font-weight: bold;
+    font-size: 28px;
+    width: 120px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top:-180px;
 }
 
 .main {

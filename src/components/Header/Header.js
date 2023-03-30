@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Routes, Route } from "react-router-dom";
 import Login from "../../pages/Login";
-import Main from '../../pages/Main';
+import Signup from '../../pages/Signup';
 
 function Header() {
     return (
@@ -19,7 +19,7 @@ function Header() {
       </Navbar>
       <Routes>
         <Route path="/login" element={<Login />}/>
-        
+        <Route path="/signup" element={<Signup />}/>
       </Routes>
   </>
     );

@@ -1,6 +1,5 @@
 .content-form {
     background-color: white;
-    border: 1px solid #dbdbdb;
     width: 600px;
     position: absolute;
     padding-left: 130px;
@@ -23,9 +22,22 @@
     border: 0 none;
     font-weight: bold;
     text-align: center;
-    width: 338.4px;
+    width: 100%;
     margin-top: 25px;
-    height:60px;
-    font-size: 20px;
-    padding-top: 13px;
+    height: 60px;
+    font-size: 18px;
+    padding-top: 15px;
+}
+
+.signup-btn .btn {
+    background-color: white;
+    border: 1px solid #1b9cff;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    height: 60px;
+    font-size: 18px;
+    padding-top: 15px;
+    color:#1b9cff;
 }

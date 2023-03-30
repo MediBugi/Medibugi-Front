@@ -1,12 +1,13 @@
 .top-line {
     border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
 }
 
 .menu-name {
     font-weight: bold;
 }
 
-.find-doc, .my-doc {
+.find-doc, .my-doc, .my-chrt {
     margin-top: 8px;
     margin-bottom: 8px;
     margin-right: 30px;
