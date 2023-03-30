@@ -11253,15 +11253,21 @@ textarea.form-control-lg {
     justify-content: center;
   }
   .artist-profile {
-    width: 100%;
-    border-radius: 50%;
+    width: 80%;
+
   }
-  .artist {
+
+   .artist { /*아이콘테두리 */
     width: 120px;
     text-align: center;
-    border-radius: 14px;
+    border-radius: 20px;
+    border-color: black;
+    border-style: double;
+    border-width: 10px;
   }
   .section-title {
+    font-family: "나눔고딕";
+    color: black;
     font-weight: 700;
     font-size: 32px;
     line-height: 38px;
@@ -11280,3 +11286,36 @@ textarea.form-control-lg {
     min-height:30px; 
     min-width: 120px;
   }
+
+
+  .artist-name { /*아이콘 이름*/
+    font-weight: bold;
+    font-family: "나눔고딕";
+    font-size: 14px;
+    color: black;
+    margin-top: 5px;
+  }
+
+  .banner {
+    width: 1070px; 
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+  }
+
+  .main-banner {
+    background-color: #20b1ff;
+    height: 300px;
+    position: relative;
+    z-index: -1;
+    margin-bottom: -40px; /*배너 밑에 선 딱 맞춤*/
+    text-align: center; /*배너 이미지 가운데로, div에 설정*/
+  }
+
+  .main-banner11 {
+    width: auto; 
+    height: auto;
+    margin-top: 1%;
+}

@@ -91,3 +91,20 @@
     font-size: 15px;
     margin-bottom: 0%;
 }
+
+
+.table_doc {
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.content_chart {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    margin-left: 250px;
+    margin-top: 100px;
+    width: 1000px;
+    height: 275px;
+    position: absolute;
+    padding: 4px;
+}
