@@ -1,10 +1,21 @@
 import Searchdoc from "../components/Content/Searchdoc";
 import HosList from "../components/List/HosList";
 import "./pages.css";
-import items from "../components/API/mock.json";
 import { getHosInfo } from "../components/API/api";
+import { useEffect, useState } from "react";
 
 function SearchDoctor() {
+  const [items, setItems] = useState([]);
+
+  const handleLoad = async () => {
+    const items = await getHosInfo();
+    setItems(items);
+  };
+
+  useEffect(() => {
+    handleLoad();
+  }, []);
+
   return (
     <>
       <div className="main">
@@ -12,7 +23,7 @@ function SearchDoctor() {
         <Searchdoc />
       </div>
       <div className="content">
-        <HosList items={getHosInfo} />
+        <HosList items={items} />
       </div>
     </>
   );
