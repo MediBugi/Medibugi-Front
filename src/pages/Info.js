@@ -1,22 +1,16 @@
-import Carousell from "../components/Carousel/Carousel";
-import HosInfo from "../components/Info/HosInfo";
-import OpenTime from "../components/Info/OpenTime";
-import Department from "../components/Info/Department";
-import DoctorInfo from "../components/Info/DoctorInfo";
-import Review from "../components/Info/Review";
+import InfoList from "../components/Info/InfoList";
+import { useLocation } from "react-router-dom";
 
 function Info() {
+  const location = useLocation();
+  const item = location.state;
+
   return (
     <>
       <div className="main">
         <p className="p">병원 정보</p>
         <div className="info-main">
-          <Carousell></Carousell>
-          <HosInfo></HosInfo>
-          <OpenTime></OpenTime>
-          <Department></Department>
-          <DoctorInfo></DoctorInfo>
-          <Review></Review>
+          <InfoList item={item}></InfoList>;
         </div>
       </div>
     </>

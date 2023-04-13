@@ -6,8 +6,7 @@ import "./Menu.css";
 import MyDocter from "../../pages/MyDocter";
 import SearchDoctor from "../../pages/SearchDocter";
 import Info from "../../pages/Info";
-import MyChart from '../../pages/MyChart';
-
+import MyChart from "../../pages/MyChart";
 
 const activeStyle = {
   color: "#0fa2f1",
@@ -43,24 +42,21 @@ function Menu() {
               MY 닥터
             </NavLink>
             <NavLink
-              to="/info"
-              className="find-doc"
+              to="/mychart"
+              className="my-chrt"
               style={({ isActive }) => {
                 return isActive ? activeStyle : deactiveStyle;
               }}
             >
-              병원 상세
+              MY 차트
             </NavLink>
-            <NavLink to="/mychart" className="my-chrt" style={({isActive})=>{
-                        return isActive ? activeStyle : deactiveStyle;
-                    }}>MY 차트</NavLink>
           </Nav>
         </Container>
       </Navbar>
       <Routes>
         <Route path="/list" element={<SearchDoctor />} />
         <Route path="/mydoc" element={<MyDocter />} />
-        <Route path="/mychart" element={<MyChart />}/>
+        <Route path="/mychart" element={<MyChart />} />
         <Route path="/info" element={<Info />} />
       </Routes>
     </>

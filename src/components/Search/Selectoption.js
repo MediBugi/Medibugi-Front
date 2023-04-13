@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import Select from "react-select";
 import "./Search.css";
 
@@ -14,33 +14,33 @@ let options = [
   { value: "specialCareIdx_7", label: "만성통증" },
   { value: "specialCareIdx_8", label: "만성피로" },
   { value: "specialCareIdx_9", label: "배뇨장애" },
-  { value: "specialCareIdx_10", label: "비만" }
+  { value: "specialCareIdx_10", label: "비만" },
 ];
 
 const Selectoption = () => {
-    const [selectValue, setSelectValue] = useState('');
-    const selectInputRef = useRef(null);
-    
-    return (
-        <>
-        <div className="c2">
+  const [selectValue, setSelectValue] = useState("");
+  const selectInputRef = useRef(null);
+
+  return (
+    <>
+      <div className="c2">
         <h5 className="name">추가옵션</h5>
         <Select
-            className="addition"
-            ref={selectInputRef}
-            onChange={(e)=>{
-                if(e){
-                    setSelectValue(e.value);
-                } else{
-                    setSelectValue("");
-                }
-            }}
-            options={options}
-            placeholder="선택하세요"
+          className="addition"
+          ref={selectInputRef}
+          onChange={(e) => {
+            if (e) {
+              setSelectValue(e.value);
+            } else {
+              setSelectValue("");
+            }
+          }}
+          options={options}
+          placeholder="선택하세요"
         />
-        </div>
-        </>
-    );	
-}
+      </div>
+    </>
+  );
+};
 
 export default Selectoption;

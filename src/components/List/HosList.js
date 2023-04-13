@@ -1,9 +1,12 @@
 import "./hoslist.css";
+import { Link } from "react-router-dom";
 
 function HosListItem({ item }) {
   return (
     <div className="hoslist">
-      <a>{item.title}</a>
+      <Link to={"/info"} state={item}>
+        <a>{item.title}</a>
+      </Link>
       <div>
         <div>주 소 : {item.addr}</div>
       </div>
