@@ -3,15 +3,18 @@ import HosList from "../components/List/HosList";
 import "./pages.css";
 import { getHosInfo } from "../components/API/api";
 import { useEffect, useState } from "react";
-import mitem from "../components/API/mock.json";
+import mitem from "../components/API/hosDataxy.json";
+import { useSearchParams } from "react-router-dom";
 
 function SearchDoctor() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const [items, setItems] = useState([]);
 
   const handleLoad = async () => {
     const items = await getHosInfo();
     console.log(items);
-    setItems(items);
+    setItems(mitem);
   };
 
   useEffect(() => {

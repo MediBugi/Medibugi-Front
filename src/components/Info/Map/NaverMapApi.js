@@ -1,6 +1,6 @@
 import { NaverMap, Marker, useNavermaps } from "react-naver-maps";
 
-function NaverMapApi() {
+function NaverMapApi({ item }) {
   const navermaps = useNavermaps();
 
   return (
@@ -11,8 +11,8 @@ function NaverMapApi() {
       mapTypeControlOptions={{
         position: navermaps.Position.TOP_LEFT,
       }}
-      defaultCenter={new navermaps.LatLng(37.3595704, 127.105399)}
-      defaultZoom={15}
+      defaultCenter={new navermaps.LatLng(item.y, item.x)}
+      defaultZoom={18}
       minZoom={10}
       maxZoom={21}
       logoControl
@@ -20,7 +20,7 @@ function NaverMapApi() {
       mapTypeControl
       zoomControl
     >
-      <Marker defaultPosition={new navermaps.LatLng(37.3595704, 127.105399)} />
+      <Marker defaultPosition={new navermaps.LatLng(item.y, item.x)} />
     </NaverMap>
   );
 }

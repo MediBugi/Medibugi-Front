@@ -10,7 +10,7 @@ function InfoList({ item }) {
     <>
       <Carousell></Carousell>
       <HosInfo item={item}></HosInfo>
-      <OpenTime></OpenTime>
+      <OpenTime item={item}></OpenTime>
       <Department></Department>
       <DoctorInfo></DoctorInfo>
       <Review></Review>

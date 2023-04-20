@@ -5,16 +5,16 @@ function HosListItem({ item }) {
   return (
     <div className="hoslist">
       <Link to={"/infolist/info"} state={item}>
-        <a>{item.title}</a>
+        {item.yadmNm}
       </Link>
       <div>
         <div>주 소 : {item.addr}</div>
       </div>
       <div>
-        <div>전화번호 : {item.tel}</div>
+        <div>전화번호 : {item.telno}</div>
       </div>
       <div>
-        <div>병원구분 : </div>
+        <div>병원구분 : {item.clCdNm} </div>
       </div>
       <div>
         <div>진료과목 : {item.mediDepart}</div>
