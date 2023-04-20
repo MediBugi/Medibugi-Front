@@ -1,5 +1,6 @@
 import "./Info.css";
-
+import NaverMapApi from "./Map/NaverMapApi";
+import { Container as MapDiv, NavermapsProvider } from "react-naver-maps";
 function OpenTime() {
   return (
     <>
@@ -7,11 +8,16 @@ function OpenTime() {
         <h2>위치 & 진료 시간</h2>
         <br></br>
         <div class="content-flex">
-          <img
-            className="map-img"
-            src="https://t1.daumcdn.net/cfile/tistory/2636C73D568B80CF2F"
-            alt="Map"
-          ></img>
+          <NavermapsProvider ncpClientId="uqmidslyyv">
+            <MapDiv
+              style={{
+                width: "100%",
+                height: "500px",
+              }}
+            >
+              <NaverMapApi></NaverMapApi>
+            </MapDiv>
+          </NavermapsProvider>
           <div>
             <ul className="font-size">
               <li>

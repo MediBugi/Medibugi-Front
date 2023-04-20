@@ -1,5 +1,8 @@
-export async function getHosInfo() {
-  const response = await fetch("https://learn.codeit.kr/api/film-reviews");
+export async function getHosInfo({ depart = "depart" }) {
+  const query = `depart=${depart}`;
+  const response = await fetch(
+    `http://localhost:8080/getHospitalList?${query}`
+  );
   const body = await response.json();
   return body;
 }

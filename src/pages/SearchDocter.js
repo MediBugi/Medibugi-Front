@@ -11,7 +11,7 @@ function SearchDoctor() {
   const handleLoad = async () => {
     const items = await getHosInfo();
     console.log(items);
-    setItems(mitem);
+    setItems(items);
   };
 
   useEffect(() => {

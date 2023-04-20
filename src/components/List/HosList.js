@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function HosListItem({ item }) {
   return (
     <div className="hoslist">
-      <Link to={"/info"} state={item}>
+      <Link to={"/infolist/info"} state={item}>
         <a>{item.title}</a>
       </Link>
       <div>
@@ -14,10 +14,10 @@ function HosListItem({ item }) {
         <div>전화번호 : {item.tel}</div>
       </div>
       <div>
-        <div>병원구분</div>
+        <div>병원구분 : </div>
       </div>
       <div>
-        <div>진료과목</div>
+        <div>진료과목 : {item.mediDepart}</div>
       </div>
     </div>
   );

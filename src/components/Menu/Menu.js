@@ -24,7 +24,7 @@ function Menu() {
         <Container>
           <Nav className="menu-name">
             <NavLink
-              to="/list"
+              to="/infolist"
               className="find-doc"
               style={({ isActive }) => {
                 return isActive ? activeStyle : deactiveStyle;
@@ -54,10 +54,12 @@ function Menu() {
         </Container>
       </Navbar>
       <Routes>
-        <Route path="/list" element={<SearchDoctor />} />
+        <Route path="infolist">
+          <Route index element={<SearchDoctor />} />
+          <Route path="info" element={<Info />} />
+        </Route>
         <Route path="/mydoc" element={<MyDocter />} />
         <Route path="/mychart" element={<MyChart />} />
-        <Route path="/info" element={<Info />} />
       </Routes>
     </>
   );
