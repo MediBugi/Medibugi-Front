@@ -4,19 +4,73 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Post from './Post';
+import axios from 'axios';
+import Modal from '../Modal/Modal';
 import "./SignupForm.css";
 
 function SignupForm() {
     const [validated, setValidated] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [explain, setExplain] = useState("");
+    const [disabled, setDisabled] = useState(false);
 
     const handleSubmit = (event) => {
+      event.preventDefault();
+
       const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
+      if (!disabled) {
+        alert("아이디 중복을 확인해 주세요")
+      }
+      else if (form.checkValidity() === false) {
         event.stopPropagation();
+      }
+      else {
+        const payload = new FormData(form);
+        axios.post('http://localhost:8080/member/signup', 
+        payload, {
+          headers: {
+            "Content-Type": 'application/json'
+          }
+        }).then (res => {
+          console.log(res.data)
+        }).catch(err => {
+          console.log('error: ', err.res)
+        });
+        document.location.href="/complete";
       }
   
       setValidated(true);
+    };
+
+    const openModal = (e) => {
+      e.preventDefault();
+      var inputId = document.getElementById('inputId').value;
+      if (!inputId) {
+        setExplain("아이디를 입력해 주세요");
+      }
+      else {
+        axios.post('http://localhost:8080/member/checkId', {
+            memberid: inputId
+          })
+          .then(res => {
+            if (res.data === true) {
+              setExplain("사용 불가능한 아이디입니다");
+              document.getElementById('inputId').value = null;
+            }
+            else {
+              setExplain("사용 가능한 아이디입니다");
+              document.getElementById('inputId').readOnly = true;
+              setDisabled(true);
+            }
+          }).catch(err => {
+            console.log('error: ', err.res)
+          });
+      }
+      setModalOpen(true);
+    };
+    const closeModal = (e) => {
+      e.preventDefault();
+      setModalOpen(false);
     };
 
     const [myaddr, setmyAddr] = useState({
@@ -47,7 +101,15 @@ function SignupForm() {
                 required
                 type="text"
                 placeholder="아이디를 입력해 주세요"
+                name="memberid"
+                id="inputId"
                 />
+                <React.Fragment>
+                <button className="checkBtn" onClick={openModal} disabled={disabled}>중복확인</button>
+                <Modal open={modalOpen} close={closeModal}>
+                  {explain}
+                </Modal>
+                </React.Fragment>
             </div>
           </Form.Group>
         </Row>
@@ -59,6 +121,7 @@ function SignupForm() {
               required
               type="text"
               placeholder="비밀번호를 입력해 주세요"
+              name="password"
             /></div>
           </Form.Group>
         </Row>
@@ -70,6 +133,7 @@ function SignupForm() {
               required
               type="text"
               placeholder="이름을 입력해 주세요"
+              name="name"
             /></div>
           </Form.Group>
         </Row>
@@ -81,6 +145,7 @@ function SignupForm() {
               required
               type="text"
               placeholder="숫자만 입력해 주세요"
+              name="telno"
             /></div>
           </Form.Group>
         </Row>
@@ -94,6 +159,7 @@ function SignupForm() {
               placeholder="주소를 입력해 주세요"
               onChange={handleInput}
               value={myaddr.address}
+              name="address"
             />
             <button className="addr-btn" type="button" onClick={handleComplete}>주소 검색</button>
             {popup && <Post addr={myaddr} setAddr={setmyAddr}></Post>}
@@ -108,21 +174,24 @@ function SignupForm() {
                     required
                     inline
                     label="남자"
-                    name="group1"
+                    name="gender"
+                    value="male"
                     type='radio'
                     id='g-male'/>
                 <Form.Check
                     required
                     inline
                     label="여자"
-                    name="group1"
+                    name="gender"
+                    value="female"
                     type='radio'
                     id='g-female'/>
                 <Form.Check
                     required
                     inline
                     label="선택안함"
-                    name="group1"
+                    name="gender"
+                    value="none"
                     type='radio'
                     id='g-none'/>
             </div>
@@ -132,15 +201,10 @@ function SignupForm() {
             <Form.Group as={Col} md="14" controlId="validationCustom07">
                 <Form.Label className="label">생년월일</Form.Label>
                 <div className="control">
-                    <Col xs={4} className="year">
-                    <Form.Control required placeholder="YYYY" className="birth" />
-                    </Col>
-                    <Col xs={3} className="mon">
-                    <Form.Control required placeholder="MM" className="birth"/>
-                    </Col>
-                    <Col xs={3} className="day">
-                    <Form.Control required placeholder="DD" className="birth" />
-                    </Col>
+                    <Form.Control
+                    required
+                    type="date" 
+                    name="birthday" />
                 </div>
             </Form.Group>
         </Row>

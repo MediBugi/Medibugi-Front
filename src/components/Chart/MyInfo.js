@@ -1,6 +1,6 @@
 import "./Chart.css";
 
-function Info() {
+function Info({data}) {
     return(
         <>
             <table
@@ -10,23 +10,27 @@ function Info() {
             cellspacing="10">
                 <tr>
                     <td className="table11">이름</td>
-                    <td className="table22">홍맹구</td>
+                    <td className="table22">{data.name}</td>
                 </tr>
                 <tr>
                     <td className="table11">성별</td>
-                    <td className="table22">남자</td>
+                    <td className="table22">{data.gender}</td>
                 </tr>
                 <tr>
                     <td className="table11">생년월일</td>
-                    <td className="table22">2023년 3월 21일</td>
+                    <td className="table22">{data.birthday}</td>
                 </tr>
                 <tr>
                     <td className="table11">아이디</td>
-                    <td className="table22">Hong</td>
+                    <td className="table22">{data.memberid}</td>
                 </tr>
                 <tr>
                     <td className="table11">거주지역</td>
-                    <td className="table22">서울특별시</td>
+                    <td className="table22">{data.address}</td>
+                </tr>
+                <tr>
+                    <td className="table11">전화번호</td>
+                    <td className="table22">{data.telno}</td>
                 </tr>
         </table>
 
