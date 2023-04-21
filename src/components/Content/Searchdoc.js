@@ -13,7 +13,7 @@ function Searchdoc() {
         </p>
         <p>
           <Selectclinic />
-          <Selectoption />
+          {/* <Selectoption /> */}
           <Searchbutton />
         </p>
       </div>
