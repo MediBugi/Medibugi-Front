@@ -78,6 +78,10 @@ section {
   display: inline-block;
 }
 
+.subbb {
+  display: inline-block;
+}
+
 li {
   list-style: none; /* 점없애기 */
 }
