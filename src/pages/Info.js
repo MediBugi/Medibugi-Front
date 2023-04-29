@@ -11,12 +11,12 @@ function Info() {
       <div className="main">
         <p className="p">병원 정보</p>
         <div className="info-main">
-          <Carousell></Carousell>
+          {/* <Carousell></Carousell> */}
           <HosInfo></HosInfo>
           <OpenTime></OpenTime>
-          <Department></Department>
-          <DoctorInfo></DoctorInfo>
-          <Review></Review>
+          {/* <Department></Department> */}
+          {/* <DoctorInfo></DoctorInfo> */}
+          {/* <Review></Review> */}
         </div>
       </div>
     </>

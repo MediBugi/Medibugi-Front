@@ -4,7 +4,7 @@ function OpenTime() {
   return (
     <>
       <section>
-        <h2>위치 & 진료 시간</h2>
+      <div className="header_1">위치 & 진료 시간</div>
         <br></br>
         <div class="content-flex">
           <img
@@ -15,31 +15,31 @@ function OpenTime() {
           <div>
             <ul className="font-size">
               <li>
-                <div className="margin inline-block">월</div>
+                <div className="header_3_1">월</div>
                 <div className="margin inline-block">09:00 ~ 18:00</div>
               </li>
               <li>
-                <div className="margin inline-block">화</div>
+                <div className="header_3_1">화</div>
                 <div className="margin inline-block">09:00 ~ 18:00</div>
               </li>
               <li>
-                <div className="margin inline-block">수</div>
+                <div className="header_3_1">수</div>
                 <div className="margin inline-block">09:00 ~ 18:00</div>
               </li>
               <li>
-                <div className="margin inline-block">목</div>
+                <div className="header_3_1">목</div>
                 <div className="margin inline-block">09:00 ~ 18:00</div>
               </li>
               <li>
-                <div className="margin inline-block">금</div>
+                <div className="header_3_1">금</div>
                 <div className="margin inline-block">09:00 ~ 18:00</div>
               </li>
               <li>
-                <div className="margin inline-block">토</div>
+                <div className="header_3_1">토</div>
                 <div className="margin inline-block">09:00 ~ 18:00</div>
               </li>
               <li>
-                <div className="margin inline-block">일</div>
+                <div className="header_3_1">일</div>
                 <div className="margin inline-block">09:00 ~ 18:00</div>
               </li>
             </ul>
