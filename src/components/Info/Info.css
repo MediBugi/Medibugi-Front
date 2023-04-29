@@ -12,7 +12,8 @@ section {
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 100px;
+  gap: 50px;
+  margin-bottom: -20px;
 }
 
 .flex1 {
@@ -40,7 +41,7 @@ section {
 }
 
 .margin-bottom {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .inline-block {
@@ -49,4 +50,34 @@ section {
 
 .map-img {
   width: 500px;
+}
+
+.header_1 {
+  font-size: 20px;
+  color: #1b9cff;
+  text-indent: 10px;
+  font-weight: bold;
+}
+
+.header_2 {
+  font-size: 30px;
+  color: gray;
+  font-weight: bold;
+}
+
+.header_3 {
+  font-size: 15px;
+  color: gray;
+  font-weight: bold;
+}
+
+.header_3_1 {
+  font-size: 15px;
+  color: gray;
+  font-weight: bold;
+  display: inline-block;
+}
+
+li {
+  list-style: none; /* 점없애기 */
 }
