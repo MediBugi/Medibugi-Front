@@ -4,17 +4,14 @@ import "./pages.css";
 import { getHosInfo } from "../components/API/api";
 import { useEffect, useState } from "react";
 import mitem from "../components/API/hosDataxy.json";
-import { useSearchParams } from "react-router-dom";
 
 function SearchDoctor() {
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const [items, setItems] = useState([]);
 
   const handleLoad = async () => {
-    const items = await getHosInfo();
+    const items = await getHosInfo(0, 1, "내과");
     console.log(items);
-    setItems(mitem);
+    setItems(items);
   };
 
   useEffect(() => {
@@ -24,7 +21,7 @@ function SearchDoctor() {
   return (
     <>
       <div className="main">
-        <p className="p">의사·병원찾기</p>
+        <div className="p">의사·병원찾기</div>
         <Searchdoc />
       </div>
       <div className="content hos_list_top">

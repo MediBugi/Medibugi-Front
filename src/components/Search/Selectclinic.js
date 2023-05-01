@@ -1,9 +1,10 @@
-import React, {useState, useRef} from "react";
-import { useLocation } from 'react-router-dom';
+import React, { useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Select from "react-select";
+import Button from "react-bootstrap/Button";
 import "./Search.css";
 
-let options = [
+let departOptions = [
   { value: "part_", label: "전체" },
   { value: "part_PF000", label: "가정의학과" },
   { value: "part_PM000", label: "내과" },
@@ -19,39 +20,88 @@ let options = [
   { value: "part_PB000", label: "정형외과" },
   { value: "part_PZ000", label: "치과" },
   { value: "part_PK000", label: "피부과" },
-  { value: "part_PL000", label: "흉부외과" }
+  { value: "part_PL000", label: "흉부외과" },
+];
+
+let detailOptions = [
+  { value: "specialCareIdx_", label: "전체" },
+  { value: "specialCareIdx_0", label: "각종 성인병" },
+  { value: "specialCareIdx_1", label: "감기&독감" },
+  { value: "specialCareIdx_2", label: "건강검진" },
+  { value: "specialCareIdx_3", label: "금연관리" },
+  { value: "specialCareIdx_4", label: "대장내시경" },
+  { value: "specialCareIdx_5", label: "두드러기" },
+  { value: "specialCareIdx_6", label: "디스크" },
+  { value: "specialCareIdx_7", label: "만성통증" },
+  { value: "specialCareIdx_8", label: "만성피로" },
+  { value: "specialCareIdx_9", label: "배뇨장애" },
+  { value: "specialCareIdx_10", label: "비만" },
 ];
 
 const Selectclinic = () => {
-    const [selectValue, setSelectValue] = useState('');
-    const selectInputRef = useRef(null);
-    const location = useLocation();
-    let id;
-    
-    if (!location.state?.id) id = -1;
-    else id = location.state?.id;
+  const [selectValue, setSelectValue] = useState({
+    depart: "",
+    detail: "",
+  });
+  const selectDepartInputRef = useRef(null);
+  const selectDetailInputRef = useRef(null);
+  const location = useLocation();
 
-    return (
-        <>
-        <div className="c1">
+  let id;
+  if (!location.state?.id) id = -1;
+  else id = location.state?.id;
+
+  function handleSubmit() {
+    console.log(selectValue);
+  }
+  return (
+    <>
+      <div className="c1">
         <h5 className="name">진료과</h5>
         <Select
-            className="basic"
-            ref={selectInputRef}
-            onChange={(e)=>{
-                if(e){
-                    setSelectValue(e.value);
-                } else{
-                    setSelectValue("");
-                }
-            }}
-            options={options}
-            placeholder="선택하세요"
-            defaultValue={options[id]}
+          className="basic"
+          ref={selectDepartInputRef}
+          onChange={(e) => {
+            if (e) {
+              setSelectValue((prevFromValue) => ({
+                ...prevFromValue,
+                depart: e.label,
+              }));
+            } else {
+              setSelectValue("");
+            }
+          }}
+          options={departOptions}
+          placeholder="선택하세요"
+          defaultValue={departOptions[id]}
         />
-        </div>
-        </>
-    );	
-}
+      </div>
+      <div className="c2">
+        <h5 className="name">추가옵션</h5>
+        <Select
+          className="addition"
+          ref={selectDetailInputRef}
+          onChange={(e) => {
+            if (e) {
+              setSelectValue((prevFromValue) => ({
+                ...prevFromValue,
+                detail: e.label,
+              }));
+            } else {
+              setSelectValue("");
+            }
+          }}
+          options={detailOptions}
+          placeholder="선택하세요"
+        />
+      </div>
+      <div className="c3">
+        <Button className="btn" onClick={handleSubmit}>
+          검색
+        </Button>
+      </div>
+    </>
+  );
+};
 
 export default Selectclinic;

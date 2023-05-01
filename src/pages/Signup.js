@@ -4,7 +4,7 @@ import "./pages.css";
 function Signup() {
   return (
     <>
-      <p className="sign-p">회원가입</p>
+      <div className="sign-p">회원가입</div>
       <SignupForm />
     </>
   );

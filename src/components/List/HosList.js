@@ -29,7 +29,7 @@ function HosList({ items }) {
       <ul>
         {items.map((item) => {
           return (
-            <li>
+            <li key={item.code}>
               <HosListItem item={item} />
             </li>
           );

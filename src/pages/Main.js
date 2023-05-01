@@ -5,14 +5,14 @@ import Footer from "../components/Main/Footer";
 import Display from "../components/Main/Display";
 
 function Main() {
-    return (
-        <>
-        <Banner/>
-        <Clinics/>
-        <Best/>
-        <Footer/>
-        </>
-    );
+  return (
+    <>
+      <Banner />
+      <Clinics />
+      <Best />
+      <Footer />
+    </>
+  );
 }
 
 export default Main;

@@ -1,18 +1,14 @@
-import Carousell from "../Carousel/Carousel";
 import HosInfo from "./HosInfo";
 import OpenTime from "./OpenTime";
-import Department from "./Department";
-import DoctorInfo from "./DoctorInfo";
 import Review from "./Review";
+import LocationInfo from "./LocationInfo";
 
 function InfoList({ item }) {
   return (
     <>
-      <Carousell></Carousell>
       <HosInfo item={item}></HosInfo>
       <OpenTime item={item}></OpenTime>
-      <Department></Department>
-      <DoctorInfo></DoctorInfo>
+      <LocationInfo item={item}></LocationInfo>
       <Review></Review>
     </>
   );

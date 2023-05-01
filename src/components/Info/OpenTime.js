@@ -8,17 +8,7 @@ function OpenTime({ item }) {
       <section>
         <h2>위치 & 진료 시간</h2>
         <br></br>
-        <div class="content-flex">
-          <NavermapsProvider ncpClientId="uqmidslyyv">
-            <MapDiv
-              style={{
-                width: "100%",
-                height: "500px",
-              }}
-            >
-              <NaverMapApi item={item}></NaverMapApi>
-            </MapDiv>
-          </NavermapsProvider>
+        <div className="content-flex">
           <div>
             <ul className="font-size">
               <li>

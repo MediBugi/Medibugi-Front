@@ -8,7 +8,7 @@ function Info() {
   return (
     <>
       <div className="main">
-        <p className="p">병원 정보</p>
+        <div className="p">병원 정보</div>
         <div className="info-main">
           <InfoList item={item}></InfoList>;
         </div>
