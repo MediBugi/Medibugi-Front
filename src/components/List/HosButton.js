@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@mui/material/Button";
 import "./hoslist.css";
 
 function DisableBtn({item}) {
@@ -13,7 +14,7 @@ function DisableBtn({item}) {
 
     return (
         <div className="addFavvv">
-            <button className="addFav" disabled={disable} onClick={() => {Click1();} } >추가</button>
+            <Button variant="contained" color="info" className="addFav" disabled={disable} onClick={() => {Click1();} } >추가</Button>
         </div>
     );
   }
