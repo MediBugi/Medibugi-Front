@@ -6,13 +6,13 @@ function LocationInfo({ item }) {
   return (
     <>
       <section className="font-size">
-        <h2>위치 정보</h2>
+      <div className="header_1">위치 정보</div>
         <br></br>
         <div className="content-flex margin">
           <NavermapsProvider ncpClientId="uqmidslyyv">
             <MapDiv
               style={{
-                width: "100%",
+                width: "80%",
                 height: "500px",
               }}
             >

@@ -3,22 +3,23 @@ import "./Info.css";
 function HosInfo({ item }) {
   return (
     <>
-      <section className="font-size">
+      {/* <section className="font-size"> */}
         <div className="content-flex">
-          <h1>{item.yadmNm}</h1>
-          <div>진료중</div>
+          <div className="header_1">병원이름</div>
+          <div className="header_2">{item.yadmNm}</div>
+          {/* <div>진료중</div> */}
         </div>
-      </section>
+      {/* </section> */}
       <section className="font-size">
         <div className="content-flex">
-          <h2>기본 정보</h2>
+          <div className="header_1">기본정보</div>
           <div>
-            <div className="margin-bottom">전화번호 : {item.telno}</div>
-            <div className="margin-bottom">
+            <div className="header_3_1">전화번호 : <div className="telEff">{item.telno}</div></div>
+            <div className="header_3">
               병원 홈페이지 : <a href={item.hospUrl}>{item.hospUrl}</a>
             </div>
-            <div className="margin-bottom">평점</div>
-            <div>리뷰 수</div>
+            {/* <div className="header_3">평점</div>
+            <div className="header_3">리뷰 수</div> */}
           </div>
         </div>
       </section>

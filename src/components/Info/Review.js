@@ -7,7 +7,7 @@ function Review() {
   return (
     <>
       <section className="Review-container font-size">
-        <h2>리뷰</h2>
+      <div className="header_1">리뷰</div>
         <br></br>
         <div
           className="Review-ReviewForm"
