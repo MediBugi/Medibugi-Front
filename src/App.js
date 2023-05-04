@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import SearchDoctor from "./pages/SearchDocter";
 import Info from "./pages/Info";
@@ -9,10 +9,18 @@ import MyChart from "./pages/MyChart";
 import MyDocter from "./pages/MyDocter";
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("user")) {
+      setIsLogin(true);
+    }
+  });
+
   return (
     <>
-      <Header />
-      <Menu />
+      <Header isLogin={isLogin} />
+      <Menu isLogin={isLogin}/>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="infolist">

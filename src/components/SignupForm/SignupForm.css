@@ -28,6 +28,23 @@
     width: 320px;
 }
 
+.control .checkBtn {
+    background-color: white;
+    border: 1px solid #1b9cff;
+    border-radius: 5px;
+    color:#1b9cff;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.control .checkBtn:disabled {
+    color: gray;
+    border: 1px solid gray;
+    font-weight: normal;
+}
+
 .addr-btn {
     background-color: white;
     border: 1px solid #1b9cff;
@@ -41,15 +58,6 @@
     margin-top: 10px;
 }
 
-.year, .mon, .day {
-    float:left;
-    margin-right: 14px;
-}
-
-.birth {
-    text-align: center;
-}
-
 .signup-form .btn {
     background-color: #1b9cff;
     border: 0 none;
@@ -59,5 +67,6 @@
     height:60px;
     font-size: 18px;
     display:block;
-    margin:auto;
+    margin-left: 100px;
+    margin-bottom: 100px;
 }

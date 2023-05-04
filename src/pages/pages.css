@@ -9,29 +9,29 @@
 }
 
 .log-p {
-  position: absolute;
-  color: #555;
-  font-weight: bold;
-  font-size: 28px;
-  width: 100px;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  margin-left: -50px;
-  margin-top: -135px;
+    position: absolute;
+    color:#555;
+    font-weight: bold;
+    font-size: 28px;
+    width: 100px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top:-170px;
 }
 
 .sign-p {
-  position: absolute;
-  color: #555;
-  font-weight: bold;
-  font-size: 28px;
-  width: 120px;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  margin-left: -50px;
-  margin-top: -180px;
+    position: absolute;
+    color:#555;
+    font-weight: bold;
+    font-size: 28px;
+    width: 120px;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top:-250px;
 }
 
 .main {
@@ -50,4 +50,38 @@
   float: left;
   position: relative;
   padding: 20px;
+}
+
+.complete-p {
+  position: absolute;
+  color:#555;
+  font-size: 25px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top:-50px;
+}
+
+.home-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 50px;
+  border: 1px solid #b7bbbe;
+  width: 150px;
+}
+
+.login-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 30px;
+  margin-top: 50px;
+  background-color: #1b9cff;
+  color: white;
+  border: 1px solid #b7bbbe;
+  font-weight: bold;
+  width: 150px;
 }
