@@ -38,22 +38,18 @@ let detailOptions = [
   { value: "specialCareIdx_10", label: "비만" },
 ];
 
-const Selectclinic = () => {
+const Selectclinic = ({ getDataFromChild }) => {
   const [selectValue, setSelectValue] = useState({
     depart: "",
-    detail: "",
   });
   const selectDepartInputRef = useRef(null);
   const selectDetailInputRef = useRef(null);
   const location = useLocation();
 
-  let id;
-  if (!location.state?.id) id = -1;
-  else id = location.state?.id;
-
   function handleSubmit() {
-    console.log(selectValue);
+    getDataFromChild(selectValue);
   }
+
   return (
     <>
       <div className="c1">
@@ -73,26 +69,7 @@ const Selectclinic = () => {
           }}
           options={departOptions}
           placeholder="선택하세요"
-          defaultValue={departOptions[id]}
-        />
-      </div>
-      <div className="c2">
-        <h5 className="name">추가옵션</h5>
-        <Select
-          className="addition"
-          ref={selectDetailInputRef}
-          onChange={(e) => {
-            if (e) {
-              setSelectValue((prevFromValue) => ({
-                ...prevFromValue,
-                detail: e.label,
-              }));
-            } else {
-              setSelectValue("");
-            }
-          }}
-          options={detailOptions}
-          placeholder="선택하세요"
+          defaultValue={"내과"}
         />
       </div>
       <div className="c3">

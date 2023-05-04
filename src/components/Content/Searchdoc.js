@@ -1,7 +1,16 @@
 import "./Content.css";
 import Selectclinic from "../Search/Selectclinic";
+import { useState } from "react";
+function Searchdoc(props) {
+  const [data, setData] = useState({
+    depart: "",
+  });
 
-function Searchdoc() {
+  function getDataFromChild(data) {
+    setData(data);
+    props.setData(data);
+  }
+
   return (
     <>
       <div className="content">
@@ -9,7 +18,7 @@ function Searchdoc() {
           지역과 진료과를 입력해 병원과 의사를 검색해 보세요.
         </div>
         <div>
-          <Selectclinic />
+          <Selectclinic getDataFromChild={getDataFromChild} />
         </div>
       </div>
     </>
