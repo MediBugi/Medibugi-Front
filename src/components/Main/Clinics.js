@@ -34,10 +34,12 @@ function Clinics() {
   };
 
   return (
-    <section className="py-5">
+    <div className="py-5">
       <Input onChange={(e) => setUserInfo(e.target.value)}></Input>
       <Button onClick={fetchOpenApi}></Button>
-    </section>
+
+    </div>
+    
   );
 }
 
