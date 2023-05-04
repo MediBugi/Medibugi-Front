@@ -22,7 +22,6 @@ function SearchDoctor() {
     } else {
       setItems((prevItems) => [...prevItems, ...items]);
     }
-
     setPageNum(options.pageNum + num);
   };
 
