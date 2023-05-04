@@ -3,6 +3,10 @@ import Menu from "./components/Menu/Menu";
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
+import SearchDoctor from "./pages/SearchDocter";
+import Info from "./pages/Info";
+import MyChart from "./pages/MyChart";
+import MyDocter from "./pages/MyDocter";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -18,7 +22,13 @@ function App() {
       <Header isLogin={isLogin} />
       <Menu isLogin={isLogin}/>
       <Routes>
-        <Route path="/" element={<Main />}/>
+        <Route path="/" element={<Main />} />
+        <Route path="infolist">
+          <Route index element={<SearchDoctor />} />
+          <Route path="info" element={<Info />} />
+        </Route>
+        <Route path="/mydoc" element={<MyDocter />} />
+        <Route path="/mychart" element={<MyChart />} />
       </Routes>
     </>
   );

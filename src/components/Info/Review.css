@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fbfbfd;
+}
+
+.Review .Review-container {
+  flex: 1 1;
+}
+
+.Review-nav-container,
+.Review-container,
+.Review-footer-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.Review-container {
+  padding: 50px 21px;
+}
+
+.Review-ReviewForm {
+  padding: 30px 32px 30px 30px;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 11px rgba(105, 105, 105, 0.2));
+  border-radius: 5px;
+}
+
+.Review-ReviewList {
+  padding: 30px 30px 0;
+  border-radius: 5px;
+}
+
+.Review-ReviewList {
+  box-shadow: 0 0 11px 0 rgba(105, 105, 105, 0.2);
+  background-color: #fff;
+}
+
+.Review-load-more-button {
+  width: 100%;
+  padding: 25px 0;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

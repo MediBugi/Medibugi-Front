@@ -4,3 +4,19 @@
   padding: 10px;
   border-bottom: 1px solid #dbdbdb;
 }
+
+.hos_list_top {
+  margin-top: 146px;
+}
+
+.addFav {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.addFavvv {
+  font-size: 20px;
+  display: inline-block;
+  float: right;
+  padding: 40px;
+}

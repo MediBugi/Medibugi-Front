@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Menu.css";
 import MyDocter from "../../pages/MyDocter";
 import SearchDoctor from "../../pages/SearchDocter";
@@ -39,7 +39,7 @@ function Menu(props) {
         <Container>
           <Nav className="menu-name">
             <NavLink
-              to="/list"
+              to="/infolist"
               className="find-doc"
               style={({ isActive }) => {
                 return isActive ? activeStyle : deactiveStyle;
@@ -62,13 +62,13 @@ function Menu(props) {
             로그인 페이지로 이동하시겠습니까?
             </LoginModal>
             <NavLink
-              to="/info"
-              className="find-doc"
+              to="/mychart"
+              className="my-chrt"
               style={({ isActive }) => {
                 return isActive ? activeStyle : deactiveStyle;
               }}
             >
-              병원 상세
+              MY 차트
             </NavLink>
             {props.isLogin &&
             <NavLink to="/mychart" className="my-chrt" style={({isActive})=>{
@@ -77,12 +77,6 @@ function Menu(props) {
           </Nav>
         </Container>
       </Navbar>
-      <Routes>
-        <Route path="/list" element={<SearchDoctor />} />
-        <Route path="/mydoc" element={<MyDocter />} />
-        <Route path="/mychart" element={<MyChart />}/>
-        <Route path="/info" element={<Info />} />
-      </Routes>
     </>
   );
 }

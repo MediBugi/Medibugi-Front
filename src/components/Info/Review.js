@@ -1,31 +1,24 @@
 import "./Info.css";
+import ReviewForm from "./Review/ReviewForm";
+import "./Review.css";
+import ticketImg from "./Review/assets/ticket.png";
 
 function Review() {
   return (
     <>
-      <section className="font-size">
-        <h2>회원 리뷰</h2>
+      <section className="Review-container font-size">
+      <div className="header_1">리뷰</div>
         <br></br>
-        <div className="content-flex margin">
-          <div>회원정보</div>
-          <div>
-            <div>치료 목록</div>
-            <div>리뷰</div>
-          </div>
+        <div
+          className="Review-ReviewForm"
+          style={{
+            backgroundImage: `url("${ticketImg}")`,
+          }}
+        >
+          <ReviewForm />
         </div>
-        <div className="content-flex margin">
-          <div>회원정보</div>
-          <div>
-            <div>치료 목록</div>
-            <div>리뷰</div>
-          </div>
-        </div>
-        <div className="content-flex margin">
-          <div>회원정보</div>
-          <div>
-            <div>치료 목록</div>
-            <div>리뷰</div>
-          </div>
+        <div className="Review-ReviewList">
+          <div className="Review-load-more-button" />
         </div>
       </section>
     </>

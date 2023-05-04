@@ -1,21 +1,25 @@
 import "./Content.css";
-import Selectoption from "../Search/Selectoption";
 import Selectclinic from "../Search/Selectclinic";
-import Searchbutton from "../Search/Searchbutton";
-import HosList from "../List/HosList";
+import { useState } from "react";
+function Searchdoc(props) {
+  const [data, setData] = useState({
+    depart: "",
+  });
 
-function Searchdoc() {
+  function getDataFromChild(data) {
+    setData(data);
+    props.setData(data);
+  }
+
   return (
     <>
       <div className="content">
-        <p className="search">
+        <div className="search">
           지역과 진료과를 입력해 병원과 의사를 검색해 보세요.
-        </p>
-        <p>
-          <Selectclinic />
-          {/* <Selectoption /> */}
-          <Searchbutton />
-        </p>
+        </div>
+        <div>
+          <Selectclinic getDataFromChild={getDataFromChild} />
+        </div>
       </div>
     </>
   );

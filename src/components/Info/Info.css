@@ -61,7 +61,7 @@ section {
 
 .header_2 {
   font-size: 30px;
-  color: gray;
+  color: black;
   font-weight: bold;
 }
 
@@ -84,4 +84,11 @@ section {
 
 li {
   list-style: none; /* 점없애기 */
+}
+
+.telEff {
+  display: inline-block;
+  font-size: 20px;
+  color: black;
+  font-weight: lighter;
 }

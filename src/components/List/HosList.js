@@ -1,9 +1,14 @@
 import "./hoslist.css";
+import { Link } from "react-router-dom";
+import DisableBtn from "./HosButton";
 
 function HosListItem({ item }) {
   return (
     <div className="hoslist">
-      <a>{item.yadmNm}</a>
+      <Link to={"/infolist/info"} state={item}>
+        {item.yadmNm}
+      </Link>
+      <DisableBtn item={item}></DisableBtn>
       <div>
         <div>주 소 : {item.addr}</div>
       </div>
@@ -11,13 +16,13 @@ function HosListItem({ item }) {
         <div>전화번호 : {item.telno}</div>
       </div>
       <div>
-        <div>병원구분</div>
+        <div>병원구분 : {item.clCdNm} </div>
       </div>
       <div>
-        <div>진료과목</div>
+        <div>진료과목 : {item.mediDepart}</div>
       </div>
     </div>
-  );
+    );
 }
 
 function HosList({ items }) {
@@ -26,7 +31,7 @@ function HosList({ items }) {
       <ul>
         {items.map((item) => {
           return (
-            <li>
+            <li key={item.code}>
               <HosListItem item={item} />
             </li>
           );
