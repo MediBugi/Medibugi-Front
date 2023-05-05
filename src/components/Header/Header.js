@@ -17,9 +17,9 @@ function Header(props) {
     <>
       <Navbar>
         <Container>
-          <NavbarBrand href="/">
+          <Navbar.Brand href="/">
             <img src="img/logo.png" width="170" height="45" alt="logo" />
-          </NavbarBrand>
+          </Navbar.Brand>
           <Nav className="justify-content-end">
             {props.isLogin ? (
               <button className="logout-btn" onClick={onClickLogout}>
