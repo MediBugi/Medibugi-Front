@@ -13,7 +13,6 @@ function OpenTime({ item }) {
             <ul className="font-size">
               <li>
                 <div className="header_3_1">월</div>
-<<<<<<< HEAD
                 <div className="margin inline-block">
                   {item.chMonStart} ~ {item.chMonEnd}
                 </div>
@@ -53,33 +52,6 @@ function OpenTime({ item }) {
                 <div className="margin inline-block">
                   {item.chSunStart} ~ {item.chSunEnd}
                 </div>
-=======
-                <div className="margin inline-block">09:00 ~ 18:00</div>
-              </li>
-              <li>
-                <div className="header_3_1">화</div>
-                <div className="margin inline-block">09:00 ~ 18:00</div>
-              </li>
-              <li>
-                <div className="header_3_1">수</div>
-                <div className="margin inline-block">09:00 ~ 18:00</div>
-              </li>
-              <li>
-                <div className="header_3_1">목</div>
-                <div className="margin inline-block">09:00 ~ 18:00</div>
-              </li>
-              <li>
-                <div className="header_3_1">금</div>
-                <div className="margin inline-block">09:00 ~ 18:00</div>
-              </li>
-              <li>
-                <div className="header_3_1">토</div>
-                <div className="margin inline-block">09:00 ~ 18:00</div>
-              </li>
-              <li>
-                <div className="header_3_1">일</div>
-                <div className="margin inline-block">09:00 ~ 18:00</div>
->>>>>>> master
               </li>
             </ul>
           </div>
