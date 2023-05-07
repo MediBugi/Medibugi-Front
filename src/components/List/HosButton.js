@@ -5,7 +5,7 @@ import LoginModal from "../Modal/LoginModal";
 import "./hoslist.css";
 import axios from "axios";
 
-function DisableBtn(props, item, data) {
+function DisableBtn(props) {
 
     const [modalOpen, setModalOpen] = useState(false);
         const checkLogin = (event) => {
@@ -34,11 +34,11 @@ function DisableBtn(props, item, data) {
             alert('즐겨찾기에 추가 되었습니다!'); 
             setDisable(true);
 
-            console.log("즐겨찾기 추가 -> ", item.yadmNm);
+            console.log("즐겨찾기 추가 -> ", props.item.yadmNm);
 
             axios.post('http://localhost:8080/favorite/add', {
-                member_id: data,
-                hoscnt: item.hoscnt
+                member_id: props.data,
+                hoscnt: props.item.hoscnt
             })
                 .then(response => {
                  console.log(response.data);
