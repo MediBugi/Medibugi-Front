@@ -3,8 +3,9 @@ import Button from "@mui/material/Button";
 import { useState } from "react";
 import LoginModal from "../Modal/LoginModal";
 import "./hoslist.css";
+import axios from "axios";
 
-function DisableBtn(props, {item, data}) {
+function DisableBtn(props, item, data) {
 
     const [modalOpen, setModalOpen] = useState(false);
         const checkLogin = (event) => {
@@ -35,15 +36,17 @@ function DisableBtn(props, {item, data}) {
 
             console.log("즐겨찾기 추가 -> ", item.yadmNm);
 
-
-        let PostData = {
-            method: 'POST',
-            body: JSON.stringify({hoscnt: item.hoscnt, member_id: data}),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        };
-        fetch(`http://localhost:8080/favorite/add?hoscnt=${item.hoscnt}&member_id=${data}`, PostData);
+            axios.post('http://localhost:8080/favorite/add', {
+                member_id: data,
+                hoscnt: item.hoscnt
+            })
+                .then(response => {
+                 console.log(response.data);
+                })
+                .catch(error => {
+                 console.log(error);
+                });  
+        
 
         console.log("저장 완료111");
         } 
