@@ -5,7 +5,15 @@ import LoginModal from "../Modal/LoginModal";
 import "./hoslist.css";
 import axios from "axios";
 
+
 function DisableBtn(props) {
+  
+  const [activeButton, setActiveButton] = useState('button2');
+
+  const handleButtonClick = (buttonId) => {
+    setActiveButton(buttonId === 'button1' ? 'button1' : 'button2');
+  };
+
 
     const [modalOpen, setModalOpen] = useState(false);
         const checkLogin = (event) => {
@@ -21,8 +29,10 @@ function DisableBtn(props) {
 
 
 
+        
     const [disable, setDisable] = React.useState(false);
     const Click1=(event)=>{
+      handleButtonClick('button1');
 
         event.preventDefault();
 
@@ -47,15 +57,34 @@ function DisableBtn(props) {
                  console.log(error);
                 });  
         
+                console.log("저장 완료111");
+              }
+    };
 
-        console.log("저장 완료111");
-        } 
+    const Click2=(event)=>{
+      handleButtonClick('button2');
+      alert('삭제 되었습니다!'); 
+      console.log("즐겨찾기 삭제 -> ", props.item.yadmNm);
+
+      axios.post('http://localhost:8080/favorite/delete', {
+                member_id: props.data,
+                hoscnt: props.item.hoscnt
+            })
+                .then(response => {
+                 console.log(response.data);
+                })
+                .catch(error => {
+                 console.log(error);
+                });  
+        
+                console.log("삭제 완료222");
     };
 
     return (
         <div className="addFavvv">
             <Button variant="contained" color="info" className="addFav" 
-            disabled={disable} onClick={Click1} >추가</Button>
+            disabled={activeButton === 'button1'} onClick={Click1} >추가</Button>
+            <Button disabled={activeButton === 'button2'} onClick={Click2}>삭제</Button>
 
             <LoginModal open={modalOpen} close={closeModal}>
             로그인하신 사용자만 이용이 가능한 서비스입니다.<br/>
