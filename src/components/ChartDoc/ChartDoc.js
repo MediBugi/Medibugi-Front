@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./ChartDoc.css";
 
 function ChartDoc(props) {
     const [data ,setData] = useState([]);
@@ -32,7 +33,7 @@ function ChartDoc(props) {
 
     return(
         <>
-            <div className="content">
+            <div className="content1">
             <p className="interest-doc">
             " {props.data.name} "님은 " {data.length} "곳의 병원에 관심이 있습니다.
             </p>
