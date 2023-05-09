@@ -4,6 +4,8 @@ import "./ChartDoc.css";
 
 function ChartDoc(props) {
     const [data ,setData] = useState([]);
+    const [nameHos ,setNamehos] = useState([]);
+
     console.log(props.data);
 
     async function getFavInfo() {
@@ -17,38 +19,39 @@ function ChartDoc(props) {
         });
       }
 
+      
       const [result, setResult] = useState([]);
     useEffect(() => {
-        getFavInfo();
+        getFavInfo(); //병원이름 중복 제거
         for(var i=0; i<data.length; i++) {
-            // Array hosName[] = data.at(i).hospitalName;
             result[i] = data.at(i).hospitalName;
             setResult(result.concat(result[i]))
         }
-        console.log(result)
+        console.log("여기요오1=> "+result)
+        const result_hosname = [...new Set(result)];
+        console.log("여기요오2=> "+result_hosname)
+        setNamehos(result_hosname)
+
     }, []);
-    
-   
-    
+    console.log("여기요오3=> "+nameHos)
+
 
     return(
         <>
             <div className="content1">
             <p className="interest-doc">
-            " {props.data.name} "님은 " {data.length} "곳의 병원에 관심이 있습니다.
+            " {props.data.name} "님은 " {nameHos.length} "곳의 병원에 관심이 있습니다.
             </p>
             <hr></hr>
 
-
-        
-        {/* {result.map((item) => { -> 중복되는 병원이름 제외하기 시도 중.. */}
-        {data.map((item) => {
+        {nameHos.map((item) => {
           return (
             
                 <table className="ChartTable">
                     <tr>
                         <td rowspan='3'><img src="img/doctor.png" width="100" height="100"/></td>
-                        <td className="name_doc">{item.hospitalName} </td>
+                        <td className="name_doc">{item} </td>
+                        {console.log("여기요오44=> "+item)}
                     </tr>
 
                     <tr>
