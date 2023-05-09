@@ -5,7 +5,7 @@ function MyDocter() {
   return (
     <>
       <div className="main">
-        <div className="p">MY 닥터</div>
+        <div className="p">MY 병원</div>
         <Mydoc />
       </div>
     </>
