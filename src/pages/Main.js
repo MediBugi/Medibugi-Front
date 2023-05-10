@@ -8,8 +8,8 @@ function Main() {
     <>
       <Banner />
       <Clinics />
-      <Best />
-      <Footer />
+      {/* <Best /> */}
+      {/* <Footer /> */}
     </>
   );
 }
