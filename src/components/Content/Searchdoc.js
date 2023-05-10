@@ -1,13 +1,9 @@
 import "./Content.css";
 import Selectclinic from "../Search/Selectclinic";
 import { useState } from "react";
-function Searchdoc(props) {
-  const [data, setData] = useState({
-    depart: "",
-  });
 
+function Searchdoc(props) {
   function getDataFromChild(data) {
-    setData(data);
     props.setData(data);
   }
 

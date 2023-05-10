@@ -1,5 +1,3 @@
-import "./Main.css";
-
 function Footer() {
   return (
     <footer className="py-5 bg-dark">

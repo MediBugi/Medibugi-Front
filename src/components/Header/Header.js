@@ -1,7 +1,8 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { NavbarBrand } from "react-bootstrap";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import SignupComplete from "../../pages/SingupComplete";
