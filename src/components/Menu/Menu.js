@@ -51,7 +51,7 @@ function Menu(props) {
               }}
               onClick={checkLogin}
             >
-              MY 닥터
+              MY 병원
             </NavLink>
             <LoginModal open={modalOpen} close={closeModal}>
             로그인하신 사용자만 이용이 가능한 서비스입니다.<br/>
