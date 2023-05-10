@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Input } from "@mui/material";
-import { Button } from "react-bootstrap";
 const { Configuration, OpenAIApi } = require("openai");
 
 let department = [
@@ -92,8 +90,23 @@ function Clinics() {
   return (
     <>
       <div className="py-5">
-        <Input onChange={(e) => setUserInfo(e.target.value)}></Input>
-        <Button onClick={fetchOpenApi}>검색</Button>
+        <div class="input-group mb-3">
+          <input
+            onChange={(e) => setUserInfo(e.target.value)}
+            type="text"
+            class="form-control"
+            placeholder="증상을 입력해보세요!"
+            aria-describedby="button-addon2"
+          ></input>
+          <button
+            onClick={fetchOpenApi}
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+          >
+            검색
+          </button>
+        </div>
       </div>
       <div>{recommend}</div>
       <div>

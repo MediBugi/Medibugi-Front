@@ -2,7 +2,6 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Routes, Route } from "react-router-dom";
-import { NavbarBrand } from "react-bootstrap";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import SignupComplete from "../../pages/SingupComplete";
@@ -18,9 +17,9 @@ function Header(props) {
     <>
       <Navbar>
         <Container>
-          <NavbarBrand href="/">
+          <Navbar.Brand href="/">
             <img src="img/logo.png" width="170" height="45" alt="logo" />
-          </NavbarBrand>
+          </Navbar.Brand>
           <Nav className="justify-content-end">
             {props.isLogin ? (
               <button className="logout-btn" onClick={onClickLogout}>

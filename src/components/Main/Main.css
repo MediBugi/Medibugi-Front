@@ -2,35 +2,62 @@
   box-sizing: border-box;
 }
 
-.py-5 {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+.artists {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+.artist-profile {
+  width: 80%;
 }
 
-.container {
-  width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
+.artist {
+  /*아이콘테두리 */
+  width: 120px;
+  text-align: center;
+  border-radius: 20px;
+  border-color: black;
+  border-style: double;
+  border-width: 10px;
+}
+.section-title {
+  font-family: "나눔고딕";
+  color: black;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  margin: 40px 0;
+  text-align: center;
+}
+.buttonsec {
+  text-align: center;
+}
+button {
+  top: 50%;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 15px;
+  min-height: 30px;
+  min-width: 60px;
+}
+
+.artist-name {
+  /*아이콘 이름*/
+  font-weight: bold;
+  font-family: "나눔고딕";
+  font-size: 14px;
+  color: black;
+  margin-top: 5px;
+}
+
+.banner {
+  width: 1070px;
+  height: 250px;
+  display: block;
   margin-left: auto;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-.text-white {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
-}
-
-.m-0 {
-  margin: 0 !important;
-}
-
-.bg-dark {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  margin-right: auto;
+  margin-top: 0%;
 }
 
 .main-banner {
@@ -46,4 +73,27 @@
   width: auto;
   height: auto;
   margin-top: 1%;
+}
+
+.input-group {
+  width: 500px;
+}
+
+.py-5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.btn {
+  background-color: #0fa2f1;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }

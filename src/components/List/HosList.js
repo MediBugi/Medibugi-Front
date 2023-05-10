@@ -1,14 +1,27 @@
 import "./hoslist.css";
 import { Link } from "react-router-dom";
 import DisableBtn from "./HosButton";
+import React, { useEffect, useState } from "react";
+
+const data = sessionStorage.getItem('user');
 
 function HosListItem({ item }) {
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("user")) {
+      setIsLogin(true);
+    }
+  });
+
   return (
+    
     <div className="hoslist">
       <Link to={"/infolist/info"} state={item}>
         {item.yadmNm}
       </Link>
-      <DisableBtn item={item}></DisableBtn>
+      <DisableBtn isLogin={isLogin} item={item} data={data}></DisableBtn>
+      
       <div>
         <div>주 소 : {item.addr}</div>
       </div>
@@ -25,7 +38,7 @@ function HosListItem({ item }) {
     );
 }
 
-function HosList({ items }) {
+function HosList({ items}) {
   return (
     <>
       <ul>

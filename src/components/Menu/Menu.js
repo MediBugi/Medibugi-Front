@@ -50,22 +50,13 @@ function Menu(props) {
               }}
               onClick={checkLogin}
             >
-              MY 닥터
+              MY 병원
             </NavLink>
             <LoginModal open={modalOpen} close={closeModal}>
               로그인하신 사용자만 이용이 가능한 서비스입니다.
               <br />
               로그인 페이지로 이동하시겠습니까?
             </LoginModal>
-            <NavLink
-              to="/mychart"
-              className="my-chrt"
-              style={({ isActive }) => {
-                return isActive ? activeStyle : deactiveStyle;
-              }}
-            >
-              MY 차트
-            </NavLink>
             {props.isLogin && (
               <NavLink
                 to="/mychart"
