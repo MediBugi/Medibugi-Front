@@ -3,7 +3,7 @@
   border: 1px solid #dbdbdb;
   margin-left: -5px;
   margin-top: -5px;
-  width: 1053px;
+  width: 1000px;
   float: left;
   position: absolute;
   padding: 4px;
@@ -12,5 +12,5 @@
 
 .ChartTable {
   margin-left: 5%;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
 }
