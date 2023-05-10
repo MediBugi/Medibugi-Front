@@ -61,7 +61,7 @@ function Clinics() {
 
   const fetchOpenApi = async () => {
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: "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",
     });
     const openai = new OpenAIApi(configuration);
 
@@ -90,17 +90,17 @@ function Clinics() {
   return (
     <>
       <div className="py-5">
-        <div class="input-group mb-3">
+        <div className="input-group mb-3">
           <input
             onChange={(e) => setUserInfo(e.target.value)}
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="증상을 입력해보세요!"
             aria-describedby="button-addon2"
           ></input>
           <button
             onClick={fetchOpenApi}
-            class="btn btn-outline-secondary"
+            className="btn btn-outline-secondary"
             type="button"
             id="button-addon2"
           >

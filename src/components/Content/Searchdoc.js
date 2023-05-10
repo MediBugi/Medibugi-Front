@@ -8,7 +8,7 @@ function Searchdoc(props) {
   }
 
   const location = CurrentLocation();
-
+  console.log(location);
   return (
     <>
       <div className="content">

@@ -4,7 +4,6 @@ import "./pages.css";
 import Button from "react-bootstrap/Button";
 import { getHosInfo } from "../components/API/api";
 import { useEffect, useState } from "react";
-import CurrentLocation from "../components/Info/CurrentLocatoin";
 import { useLocation } from "react-router-dom";
 
 let department = [
