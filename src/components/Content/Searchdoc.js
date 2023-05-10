@@ -1,6 +1,8 @@
 import "./Content.css";
 import Selectclinic from "../Search/Selectclinic";
 import { useState } from "react";
+import CurrentLocation from "../Info/CurrentLocation";
+
 function Searchdoc(props) {
   const [data, setData] = useState({
     depart: "",
@@ -11,12 +13,13 @@ function Searchdoc(props) {
     props.setData(data);
   }
 
+  const location = CurrentLocation();
+
   return (
     <>
       <div className="content">
-        <div className="search">
-          지역과 진료과를 입력해 병원과 의사를 검색해 보세요.
-        </div>
+        <img className="place_img" src="img/placeholder.png" alt="placeholder" />
+        <div className="addr">{location.address}</div>
         <div>
           <Selectclinic getDataFromChild={getDataFromChild} />
         </div>

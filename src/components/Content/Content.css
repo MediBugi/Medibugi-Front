@@ -3,6 +3,7 @@
 .c3 {
   float: left;
   margin-left: 30px; /* 약간 띄우기 */
+  margin-top: 10px;
 }
 
 .content {
@@ -25,13 +26,17 @@
   margin-top: 20px;
 }
 
-.search {
+.place_img {
+  float:left;
+  margin-top: 18px;
+  margin-left: 25px;
+}
+
+.addr {
   font-family: "나눔고딕";
   font-size: 18px;
-  color: #0fa2f1;
-  margin-left: 8px;
   margin-top: 18px;
-  margin-left: 30px; /* 약간 띄우기 */
+  color:#108ccf;
 }
 
 .search_img {
