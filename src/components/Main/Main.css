@@ -84,6 +84,7 @@ button {
   align-items: center;
   justify-content: center;
   margin-top: 2%;
+ margin-bottom: 0%;
 }
 
 .btn {
@@ -96,4 +97,28 @@ button {
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
+}
+
+.searchRes {
+  color: black;
+  font-family: "나눔고딕";
+  font-size: 20px;
+  margin-top: 0%;
+  margin-left: 10%;
+  margin-right: 10%;
+  /*border: 2px solid #0fa2f1;*/
+  padding: 20px;
+}
+
+.searchLink {
+  font-family: "나눔고딕";
+  font-size: 20px;
+  margin-top: 0%;
+  margin-left: 15%;
+  margin-right: 10%;
+  padding: 0px;
+}
+
+.searchLinkBox {
+  margin-bottom: 5%;
 }

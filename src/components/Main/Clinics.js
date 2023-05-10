@@ -61,7 +61,7 @@ function Clinics() {
 
   const fetchOpenApi = async () => {
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: "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",
     });
     const openai = new OpenAIApi(configuration);
 
@@ -108,12 +108,14 @@ function Clinics() {
           </button>
         </div>
       </div>
-      <div>{recommend}</div>
-      <div>
+
+      <div className="searchRes">{recommend}</div>
+
+      <div className="searchLinkBox">
         {ai.map((link, index) => {
           if (link) {
             return (
-              <div key={link}>
+              <div className="searchLink" key={link}>
                 <Link to={"/infolist"} state={index + 1}>
                   {link}바로가기
                 </Link>
