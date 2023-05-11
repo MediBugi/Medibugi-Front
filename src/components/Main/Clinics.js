@@ -109,12 +109,14 @@ function Clinics() {
           </button>
         </div>
       </div>
-      <div>{recommend}</div>
-      <div>
+
+      <div className="searchRes">{recommend}</div>
+
+      <div className="searchLinkBox">
         {ai.map((link, index) => {
           if (link) {
             return (
-              <div key={link}>
+              <div className="searchLink" key={link}>
                 <Link to={"/infolist"} state={index + 1}>
                   {link}바로가기
                 </Link>

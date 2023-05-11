@@ -29,9 +29,9 @@ function ChartDoc(props) {
       setResult(result.concat(result[i]));
     }
     console.log("여기요오1=> " + result);
-    const result_hosname = [...new Set(result)];
-    console.log("여기요오2=> " + result_hosname);
-    setNamehos(result_hosname);
+    // const result_hosname = [...new Set(result)];
+    // console.log("여기요오2=> " + result_hosname);
+    // setNamehos(result_hosname);
   }, []);
   console.log("여기요오3=> " + nameHos);
 
@@ -39,12 +39,13 @@ function ChartDoc(props) {
     <>
       <div className="content1">
         <p className="interest-doc">
-          " {props.data.name} "님은 " {nameHos.length} "곳의 병원에 관심이
+          " {props.data.name} "님은 " {result.length} "곳의 병원에 관심이
           있습니다.
+        {console.log("병원몇개=> " + result.length)}
         </p>
         <hr></hr>
 
-        {nameHos.map((item) => {
+        {result.map((item) => {
           return (
             <table className="ChartTable">
               <tr>
@@ -52,7 +53,7 @@ function ChartDoc(props) {
                   <img src="img/doctor.png" width="100" height="100" />
                 </td>
                 <td className="name_doc">{item} </td>
-                {console.log("여기요오44=> " + item)}
+                {console.log("여기요오4444=> " + item)}
               </tr>
 
               <tr>

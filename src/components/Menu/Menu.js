@@ -40,7 +40,7 @@ function Menu(props) {
                 return isActive ? activeStyle : deactiveStyle;
               }}
             >
-              의사·병원찾기
+              병원찾기
             </NavLink>
             <NavLink
               to="/mydoc"
