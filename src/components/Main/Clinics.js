@@ -61,8 +61,9 @@ function Clinics() {
 
   const fetchOpenApi = async () => {
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
+    delete configuration.baseOptions.headers["User-Agent"];
     const openai = new OpenAIApi(configuration);
 
     const response = await openai
