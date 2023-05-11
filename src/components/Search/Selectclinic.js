@@ -6,23 +6,23 @@ import { useLocation } from "react-router-dom";
 
 let sidoOptions = [
   { value: "part_0", label: "전체" },
-  { value: "part_SF000", label: "서울" },
-  { value: "part_SM000", label: "부산" },
-  { value: "part_ST000", label: "대구" },
-  { value: "part_SX000", label: "인천" },
-  { value: "part_SW000", label: "광주" },
-  { value: "part_SU000", label: "대전" },
-  { value: "part_SY000", label: "울산" },
-  { value: "part_SI000", label: "세종시" },
-  { value: "part_SA000", label: "경기" },
-  { value: "part_SD000", label: "강원" },
-  { value: "part_SN000", label: "충북" },
-  { value: "part_SB000", label: "충남" },
-  { value: "part_SZ000", label: "전북" },
-  { value: "part_SK000", label: "전남" },
-  { value: "part_SL000", label: "경북" },
-  { value: "part_SC000", label: "경남" },
-  { value: "part_SS000", label: "제주" },
+  { value: "part_SF000", label: "서울특별시" },
+  { value: "part_SM000", label: "부산광역시" },
+  { value: "part_ST000", label: "대구광역시" },
+  { value: "part_SX000", label: "인천광역시" },
+  { value: "part_SW000", label: "광주광역시" },
+  { value: "part_SU000", label: "대전광역시" },
+  { value: "part_SY000", label: "울산광역시" },
+  { value: "part_SI000", label: "세종특별자치시" },
+  { value: "part_SA000", label: "경기도" },
+  { value: "part_SD000", label: "강원도" },
+  { value: "part_SN000", label: "충청북도" },
+  { value: "part_SB000", label: "충청남도" },
+  { value: "part_SZ000", label: "전라북도" },
+  { value: "part_SK000", label: "전라남도" },
+  { value: "part_SL000", label: "경상북도" },
+  { value: "part_SC000", label: "경상남도" },
+  { value: "part_SS000", label: "제주특별자치도" },
 ];
 
 let seoulOptions = [
@@ -54,275 +54,275 @@ let seoulOptions = [
   { value: "sgguSeoul26", label: "중랑구" },
 ];
 let busanOptions = [
-  { value: "sgguBusan", label: "전체" },
-  { value: "sgguBusan", label: "부산강서구" },
-  { value: "sgguBusan", label: "부산금정구" },
-  { value: "sgguBusan", label: "부산기장군" },
-  { value: "sgguBusan", label: "부산남구" },
-  { value: "sgguBusan", label: "부산동구" },
-  { value: "sgguBusan", label: "부산동래구" },
-  { value: "sgguBusan", label: "부산진구" },
-  { value: "sgguBusan", label: "부산북구" },
-  { value: "sgguBusan", label: "부산사상구" },
-  { value: "sgguBusan", label: "부산사하구" },
-  { value: "sgguBusan", label: "부산서구" },
-  { value: "sgguBusan", label: "부산수영구" },
-  { value: "sgguBusan", label: "부산연제구" },
-  { value: "sgguBusan", label: "부산영도구" },
-  { value: "sgguBusan", label: "부산중구" },
-  { value: "sgguBusan", label: "부산해운대구" },
+  { value: "sgguBusan1", label: "전체" },
+  { value: "sgguBusan2", label: "강서구" },
+  { value: "sgguBusan3", label: "금정구" },
+  { value: "sgguBusan4", label: "기장군" },
+  { value: "sgguBusan5", label: "남구" },
+  { value: "sgguBusan6", label: "동구" },
+  { value: "sgguBusan7", label: "동래구" },
+  { value: "sgguBusan8", label: "진구" },
+  { value: "sgguBusan9", label: "북구" },
+  { value: "sgguBusan0", label: "사상구" },
+  { value: "sgguBusan11", label: "사하구" },
+  { value: "sgguBusan12", label: "서구" },
+  { value: "sgguBusan13", label: "수영구" },
+  { value: "sgguBusan14", label: "연제구" },
+  { value: "sgguBusan15", label: "영도구" },
+  { value: "sgguBusan16", label: "중구" },
+  { value: "sgguBusan17", label: "해운대구" },
 ];
 let daeguOptions = [
-  { value: "sgguDaegu", label: "전체" },
-  { value: "sgguDaegu", label: "대구남구" },
-  { value: "sgguDaegu", label: "대구달서구" },
-  { value: "sgguDaegu", label: "대구달성군" },
-  { value: "sgguDaegu", label: "대구동구" },
-  { value: "sgguDaegu", label: "대구북구" },
-  { value: "sgguDaegu", label: "대구서구" },
-  { value: "sgguDaegu", label: "대구수성구" },
-  { value: "sgguDaegu", label: "대구중구" },
+  { value: "sgguDaegu1", label: "전체" },
+  { value: "sgguDaegu2", label: "남구" },
+  { value: "sgguDaegu3", label: "달서구" },
+  { value: "sgguDaegu4", label: "달성군" },
+  { value: "sgguDaegu5", label: "동구" },
+  { value: "sgguDaegu6", label: "북구" },
+  { value: "sgguDaegu7", label: "서구" },
+  { value: "sgguDaegu8", label: "수성구" },
+  { value: "sgguDaegu9", label: "중구" },
 ];
 let incheonOptions = [
-  { value: "sgguIncheon", label: "전체" },
-  { value: "sgguIncheon", label: "인천강화군" },
-  { value: "sgguIncheon", label: "인천계양구" },
-  { value: "sgguIncheon", label: "인천남구" },
-  { value: "sgguIncheon", label: "인천남동구" },
-  { value: "sgguIncheon", label: "인천동구" },
-  { value: "sgguIncheon", label: "인천미추홀구" },
-  { value: "sgguIncheon", label: "인천부평구" },
-  { value: "sgguIncheon", label: "인천서구" },
-  { value: "sgguIncheon", label: "인천연수구" },
-  { value: "sgguIncheon", label: "인천옹진군" },
-  { value: "sgguIncheon", label: "인천중구" },
+  { value: "sgguIncheon0", label: "전체" },
+  { value: "sgguIncheon1", label: "강화군" },
+  { value: "sgguIncheon2", label: "계양구" },
+  { value: "sgguIncheon3", label: "남구" },
+  { value: "sgguIncheon4", label: "남동구" },
+  { value: "sgguIncheon5", label: "동구" },
+  { value: "sgguIncheon6", label: "미추홀구" },
+  { value: "sgguIncheon7", label: "부평구" },
+  { value: "sgguIncheon8", label: "서구" },
+  { value: "sgguIncheon9", label: "연수구" },
+  { value: "sgguIncheon01", label: "옹진군" },
+  { value: "sgguIncheon02", label: "중구" },
 ];
 let kwangjuOptions = [
-  { value: "sgguKwangju", label: "전체" },
-  { value: "sgguKwangju", label: "광주광산구" },
-  { value: "sgguKwangju", label: "광주남구" },
-  { value: "sgguKwangju", label: "광주동구" },
-  { value: "sgguKwangju", label: "광주북구" },
-  { value: "sgguKwangju", label: "광주서구" },
+  { value: "sgguKwangju1", label: "전체" },
+  { value: "sgguKwangju2", label: "광산구" },
+  { value: "sgguKwangju3", label: "남구" },
+  { value: "sgguKwangju4", label: "동구" },
+  { value: "sgguKwangju5", label: "북구" },
+  { value: "sgguKwangju6", label: "서구" },
 ];
 let daejunOptions = [
-  { value: "sggudaejun", label: "전체" },
-  { value: "sggudaejun", label: "대전대덕구" },
-  { value: "sggudaejun", label: "대전동구" },
-  { value: "sggudaejun", label: "대전서구" },
-  { value: "sggudaejun", label: "대전유성구" },
-  { value: "sggudaejun", label: "대전중구" },
+  { value: "sggudaejun1", label: "전체" },
+  { value: "sggudaejun2", label: "대덕구" },
+  { value: "sggudaejun3", label: "동구" },
+  { value: "sggudaejun4", label: "서구" },
+  { value: "sggudaejun5", label: "유성구" },
+  { value: "sggudaejun6", label: "중구" },
 ];
 let ulsanOptions = [
-  { value: "sgguUlsan", label: "전체" },
-  { value: "sgguUlsan", label: "울산남구" },
-  { value: "sgguUlsan", label: "울산동구" },
-  { value: "sgguUlsan", label: "울산북구" },
-  { value: "sgguUlsan", label: "울산울주군" },
-  { value: "sgguUlsan", label: "울산중구" },
+  { value: "sgguUlsan1", label: "전체" },
+  { value: "sgguUlsan2", label: "남구" },
+  { value: "sgguUlsan3", label: "동구" },
+  { value: "sgguUlsan4", label: "북구" },
+  { value: "sgguUlsan5", label: "울주군" },
+  { value: "sgguUlsan6", label: "중구" },
 ];
 let sejongOptions = [{ value: "sgguSejong", label: "전체" }];
 let kyungkiOptions = [
-  { value: "sgguKyungki", label: "전체" },
-  { value: "sgguKyungki", label: "가평군" },
-  { value: "sgguKyungki", label: "고양덕양구" },
-  { value: "sgguKyungki", label: "고양일산동구" },
-  { value: "sgguKyungki", label: "고양일산서구" },
-  { value: "sgguKyungki", label: "과천시" },
-  { value: "sgguKyungki", label: "광명시" },
-  { value: "sgguKyungki", label: "광주시" },
-  { value: "sgguKyungki", label: "구리시" },
-  { value: "sgguKyungki", label: "군포시" },
-  { value: "sgguKyungki", label: "김포시" },
-  { value: "sgguKyungki", label: "남양주시" },
-  { value: "sgguKyungki", label: "동두천시" },
-  { value: "sgguKyungki", label: "부천시" },
-  { value: "sgguKyungki", label: "성남분당구" },
-  { value: "sgguKyungki", label: "성남수정구" },
-  { value: "sgguKyungki", label: "성남중원구" },
-  { value: "sgguKyungki", label: "수원권선구" },
-  { value: "sgguKyungki", label: "수원영통구" },
-  { value: "sgguKyungki", label: "수원장안구" },
-  { value: "sgguKyungki", label: "수원팔달구" },
-  { value: "sgguKyungki", label: "시흥시" },
-  { value: "sgguKyungki", label: "안산단원구" },
-  { value: "sgguKyungki", label: "안산상록구" },
-  { value: "sgguKyungki", label: "안성시" },
-  { value: "sgguKyungki", label: "안양동안구" },
-  { value: "sgguKyungki", label: "안양만안구" },
-  { value: "sgguKyungki", label: "양주시" },
-  { value: "sgguKyungki", label: "양평군" },
-  { value: "sgguKyungki", label: "여주시" },
-  { value: "sgguKyungki", label: "연천군" },
-  { value: "sgguKyungki", label: "오산시" },
-  { value: "sgguKyungki", label: "용인기흥구" },
-  { value: "sgguKyungki", label: "용인수지구" },
-  { value: "sgguKyungki", label: "용인처인구" },
-  { value: "sgguKyungki", label: "의왕시" },
-  { value: "sgguKyungki", label: "의정부시" },
-  { value: "sgguKyungki", label: "이천시" },
-  { value: "sgguKyungki", label: "파주시" },
-  { value: "sgguKyungki", label: "평택시" },
-  { value: "sgguKyungki", label: "포천시" },
-  { value: "sgguKyungki", label: "하남시" },
-  { value: "sgguKyungki", label: "화성시" },
+  { value: "sgguKyungki1", label: "전체" },
+  { value: "sgguKyungki2", label: "가평군" },
+  { value: "sgguKyungki3", label: "고양시 덕양구" },
+  { value: "sgguKyungki4", label: "고양시 일산동구" },
+  { value: "sgguKyungki5", label: "고양시 일산서구" },
+  { value: "sgguKyungki6", label: "과천시" },
+  { value: "sgguKyungki7", label: "광명시" },
+  { value: "sgguKyungki8", label: "광주시" },
+  { value: "sgguKyungki9", label: "구리시" },
+  { value: "sgguKyungki11", label: "군포시" },
+  { value: "sgguKyungki12", label: "김포시" },
+  { value: "sgguKyungki13", label: "남양주시" },
+  { value: "sgguKyungki14", label: "동두천시" },
+  { value: "sgguKyungki15", label: "부천시" },
+  { value: "sgguKyungki16", label: "성남시 분당구" },
+  { value: "sgguKyungki17", label: "성남시 수정구" },
+  { value: "sgguKyungki18", label: "성남시 중원구" },
+  { value: "sgguKyungki19", label: "수원시 권선구" },
+  { value: "sgguKyungki21", label: "수원시 영통구" },
+  { value: "sgguKyungki22", label: "수원시 장안구" },
+  { value: "sgguKyungki23", label: "수원시 팔달구" },
+  { value: "sgguKyungki24", label: "시흥시" },
+  { value: "sgguKyungki25", label: "안산시 단원구" },
+  { value: "sgguKyungki26", label: "안산시 상록구" },
+  { value: "sgguKyungki27", label: "안성시" },
+  { value: "sgguKyungki28", label: "안양시 동안구" },
+  { value: "sgguKyungki29", label: "안양시 만안구" },
+  { value: "sgguKyungki31", label: "양주시" },
+  { value: "sgguKyungki32", label: "양평군" },
+  { value: "sgguKyungki33", label: "여주시" },
+  { value: "sgguKyungki34", label: "연천군" },
+  { value: "sgguKyungki35", label: "오산시" },
+  { value: "sgguKyungki36", label: "용인시 기흥구" },
+  { value: "sgguKyungki37", label: "용인시 수지구" },
+  { value: "sgguKyungki38", label: "용인시 처인구" },
+  { value: "sgguKyungki39", label: "의왕시" },
+  { value: "sgguKyungki41", label: "의정부시" },
+  { value: "sgguKyungki42", label: "이천시" },
+  { value: "sgguKyungki43", label: "파주시" },
+  { value: "sgguKyungki44", label: "평택시" },
+  { value: "sgguKyungki45", label: "포천시" },
+  { value: "sgguKyungki46", label: "하남시" },
+  { value: "sgguKyungki47", label: "화성시" },
 ];
 let kangwonOptions = [
-  { value: "sgguKangwon", label: "전체" },
-  { value: "sgguKangwon", label: "강릉시" },
-  { value: "sgguKangwon", label: "고성군" },
-  { value: "sgguKangwon", label: "동해시" },
-  { value: "sgguKangwon", label: "삼척시" },
-  { value: "sgguKangwon", label: "속초시" },
-  { value: "sgguKangwon", label: "양구군" },
-  { value: "sgguKangwon", label: "양양군" },
-  { value: "sgguKangwon", label: "영월군" },
-  { value: "sgguKangwon", label: "원주시" },
-  { value: "sgguKangwon", label: "인제군" },
-  { value: "sgguKangwon", label: "정선군" },
-  { value: "sgguKangwon", label: "철원군" },
-  { value: "sgguKangwon", label: "춘천시" },
-  { value: "sgguKangwon", label: "태백시" },
-  { value: "sgguKangwon", label: "평창군" },
-  { value: "sgguKangwon", label: "홍천군" },
-  { value: "sgguKangwon", label: "화천군" },
-  { value: "sgguKangwon", label: "횡성군" },
+  { value: "sgguKangwon1", label: "전체" },
+  { value: "sgguKangwon2", label: "강릉시" },
+  { value: "sgguKangwon3", label: "고성군" },
+  { value: "sgguKangwon4", label: "동해시" },
+  { value: "sgguKangwon5", label: "삼척시" },
+  { value: "sgguKangwon6", label: "속초시" },
+  { value: "sgguKangwon7", label: "양구군" },
+  { value: "sgguKangwon8", label: "양양군" },
+  { value: "sgguKangwon9", label: "영월군" },
+  { value: "sgguKangwon11", label: "원주시" },
+  { value: "sgguKangwon12", label: "인제군" },
+  { value: "sgguKangwon13", label: "정선군" },
+  { value: "sgguKangwon14", label: "철원군" },
+  { value: "sgguKangwon15", label: "춘천시" },
+  { value: "sgguKangwon16", label: "태백시" },
+  { value: "sgguKangwon17", label: "평창군" },
+  { value: "sgguKangwon18", label: "홍천군" },
+  { value: "sgguKangwon19", label: "화천군" },
+  { value: "sgguKangwon21", label: "횡성군" },
 ];
 let chungbukOptions = [
-  { value: "sgguChungbuk", label: "전체" },
-  { value: "sgguChungbuk", label: "괴산군" },
-  { value: "sgguChungbuk", label: "단양군" },
-  { value: "sgguChungbuk", label: "보은군" },
-  { value: "sgguChungbuk", label: "영동군" },
-  { value: "sgguChungbuk", label: "옥천군" },
-  { value: "sgguChungbuk", label: "음성군" },
-  { value: "sgguChungbuk", label: "제천시" },
-  { value: "sgguChungbuk", label: "증평군" },
-  { value: "sgguChungbuk", label: "진천군" },
-  { value: "sgguChungbuk", label: "청주상당구" },
-  { value: "sgguChungbuk", label: "청주서원구" },
-  { value: "sgguChungbuk", label: "청주청원구" },
-  { value: "sgguChungbuk", label: "청주흥덕구" },
-  { value: "sgguChungbuk", label: "충주시" },
+  { value: "sgguChungbuk1", label: "전체" },
+  { value: "sgguChungbuk2", label: "괴산군" },
+  { value: "sgguChungbuk3", label: "단양군" },
+  { value: "sgguChungbuk4", label: "보은군" },
+  { value: "sgguChungbuk5", label: "영동군" },
+  { value: "sgguChungbuk6", label: "옥천군" },
+  { value: "sgguChungbuk7", label: "음성군" },
+  { value: "sgguChungbuk8", label: "제천시" },
+  { value: "sgguChungbuk9", label: "증평군" },
+  { value: "sgguChungbuk11", label: "진천군" },
+  { value: "sgguChungbuk12", label: "청주시 상당구" },
+  { value: "sgguChungbuk13", label: "청주시 서원구" },
+  { value: "sgguChungbuk14", label: "청주시 청원구" },
+  { value: "sgguChungbuk15", label: "청주시 흥덕구" },
+  { value: "sgguChungbuk16", label: "충주시" },
 ];
 let chungnamOptions = [
-  { value: "sgguChungnam", label: "전체" },
-  { value: "sgguChungnam", label: "계룡시" },
-  { value: "sgguChungnam", label: "공주시" },
-  { value: "sgguChungnam", label: "금산군" },
-  { value: "sgguChungnam", label: "논산시" },
-  { value: "sgguChungnam", label: "당진시" },
-  { value: "sgguChungnam", label: "보령시" },
-  { value: "sgguChungnam", label: "부여군" },
-  { value: "sgguChungnam", label: "서산시" },
-  { value: "sgguChungnam", label: "서천군" },
-  { value: "sgguChungnam", label: "아산시" },
-  { value: "sgguChungnam", label: "예산군" },
-  { value: "sgguChungnam", label: "천안동남구" },
-  { value: "sgguChungnam", label: "천안서북구" },
-  { value: "sgguChungnam", label: "청양군" },
-  { value: "sgguChungnam", label: "태안군" },
-  { value: "sgguChungnam", label: "홍성군" },
+  { value: "sgguChungnam1", label: "전체" },
+  { value: "sgguChungnam2", label: "계룡시" },
+  { value: "sgguChungnam3", label: "공주시" },
+  { value: "sgguChungnam4", label: "금산군" },
+  { value: "sgguChungnam5", label: "논산시" },
+  { value: "sgguChungnam6", label: "당진시" },
+  { value: "sgguChungnam7", label: "보령시" },
+  { value: "sgguChungnam8", label: "부여군" },
+  { value: "sgguChungnam9", label: "서산시" },
+  { value: "sgguChungnam11", label: "서천군" },
+  { value: "sgguChungnam12", label: "아산시" },
+  { value: "sgguChungnam13", label: "예산군" },
+  { value: "sgguChungnam14", label: "천안시 동남구" },
+  { value: "sgguChungnam15", label: "천안시 서북구" },
+  { value: "sgguChungnam16", label: "청양군" },
+  { value: "sgguChungnam17", label: "태안군" },
+  { value: "sgguChungnam18", label: "홍성군" },
 ];
 let jeonbukOptions = [
-  { value: "sgguJeonbuk", label: "전체" },
-  { value: "sgguJeonbuk", label: "고창군" },
-  { value: "sgguJeonbuk", label: "군산시" },
-  { value: "sgguJeonbuk", label: "김제시" },
-  { value: "sgguJeonbuk", label: "남원시" },
-  { value: "sgguJeonbuk", label: "무주군" },
-  { value: "sgguJeonbuk", label: "부안군" },
-  { value: "sgguJeonbuk", label: "순창군" },
-  { value: "sgguJeonbuk", label: "완주군" },
-  { value: "sgguJeonbuk", label: "익산시" },
-  { value: "sgguJeonbuk", label: "임실군" },
-  { value: "sgguJeonbuk", label: "장수군" },
-  { value: "sgguJeonbuk", label: "전주덕진구" },
-  { value: "sgguJeonbuk", label: "전주완산구" },
-  { value: "sgguJeonbuk", label: "정읍시" },
-  { value: "sgguJeonbuk", label: "진안군" },
+  { value: "sgguJeonbuk1", label: "전체" },
+  { value: "sgguJeonbuk2", label: "고창군" },
+  { value: "sgguJeonbuk3", label: "군산시" },
+  { value: "sgguJeonbuk4", label: "김제시" },
+  { value: "sgguJeonbuk5", label: "남원시" },
+  { value: "sgguJeonbuk6", label: "무주군" },
+  { value: "sgguJeonbuk7", label: "부안군" },
+  { value: "sgguJeonbuk8", label: "순창군" },
+  { value: "sgguJeonbuk9", label: "완주군" },
+  { value: "sgguJeonbuk11", label: "익산시" },
+  { value: "sgguJeonbuk12", label: "임실군" },
+  { value: "sgguJeonbuk13", label: "장수군" },
+  { value: "sgguJeonbuk14", label: "전주시 덕진구" },
+  { value: "sgguJeonbuk15", label: "전주시 완산구" },
+  { value: "sgguJeonbuk16", label: "정읍시" },
+  { value: "sgguJeonbuk17", label: "진안군" },
 ];
 let jeonnamOptions = [
-  { value: "sgguJeonnam", label: "전체" },
-  { value: "sgguJeonnam", label: "강진군" },
-  { value: "sgguJeonnam", label: "고흥군" },
-  { value: "sgguJeonnam", label: "곡성군" },
-  { value: "sgguJeonnam", label: "광양시" },
-  { value: "sgguJeonnam", label: "구례군" },
-  { value: "sgguJeonnam", label: "나주시" },
-  { value: "sgguJeonnam", label: "담양군" },
-  { value: "sgguJeonnam", label: "목포시" },
-  { value: "sgguJeonnam", label: "무안군" },
-  { value: "sgguJeonnam", label: "보성군" },
-  { value: "sgguJeonnam", label: "순천시" },
-  { value: "sgguJeonnam", label: "신안군" },
-  { value: "sgguJeonnam", label: "여수시" },
-  { value: "sgguJeonnam", label: "영광군" },
-  { value: "sgguJeonnam", label: "영암군" },
-  { value: "sgguJeonnam", label: "완도군" },
-  { value: "sgguJeonnam", label: "장성군" },
-  { value: "sgguJeonnam", label: "장흥군" },
-  { value: "sgguJeonnam", label: "진도군" },
-  { value: "sgguJeonnam", label: "함평군" },
-  { value: "sgguJeonnam", label: "해남군" },
-  { value: "sgguJeonnam", label: "화순군" },
+  { value: "sgguJeonnam1", label: "전체" },
+  { value: "sgguJeonnam2", label: "강진군" },
+  { value: "sgguJeonnam3", label: "고흥군" },
+  { value: "sgguJeonnam4", label: "곡성군" },
+  { value: "sgguJeonnam5", label: "광양시" },
+  { value: "sgguJeonnam6", label: "구례군" },
+  { value: "sgguJeonnam7", label: "나주시" },
+  { value: "sgguJeonnam8", label: "담양군" },
+  { value: "sgguJeonnam9", label: "목포시" },
+  { value: "sgguJeonnam11", label: "무안군" },
+  { value: "sgguJeonnam12", label: "보성군" },
+  { value: "sgguJeonnam13", label: "순천시" },
+  { value: "sgguJeonnam14", label: "신안군" },
+  { value: "sgguJeonnam15", label: "여수시" },
+  { value: "sgguJeonnam16", label: "영광군" },
+  { value: "sgguJeonnam17", label: "영암군" },
+  { value: "sgguJeonnam18", label: "완도군" },
+  { value: "sgguJeonnam19", label: "장성군" },
+  { value: "sgguJeonnam21", label: "장흥군" },
+  { value: "sgguJeonnam22", label: "진도군" },
+  { value: "sgguJeonnam23", label: "함평군" },
+  { value: "sgguJeonnam24", label: "해남군" },
+  { value: "sgguJeonnam25", label: "화순군" },
 ];
 let kyungbukOptions = [
-  { value: "sgguKyungbuk", label: "전체" },
-  { value: "sgguKyungbuk", label: "경산시" },
-  { value: "sgguKyungbuk", label: "경주시" },
-  { value: "sgguKyungbuk", label: "고령군" },
-  { value: "sgguKyungbuk", label: "구미시" },
-  { value: "sgguKyungbuk", label: "군위군" },
-  { value: "sgguKyungbuk", label: "김천시" },
-  { value: "sgguKyungbuk", label: "문경시" },
-  { value: "sgguKyungbuk", label: "봉화군" },
-  { value: "sgguKyungbuk", label: "상주시" },
-  { value: "sgguKyungbuk", label: "성주군" },
-  { value: "sgguKyungbuk", label: "안동시" },
-  { value: "sgguKyungbuk", label: "영덕군" },
-  { value: "sgguKyungbuk", label: "영양군" },
-  { value: "sgguKyungbuk", label: "영주시" },
-  { value: "sgguKyungbuk", label: "영천시" },
-  { value: "sgguKyungbuk", label: "예천군" },
-  { value: "sgguKyungbuk", label: "울릉군" },
-  { value: "sgguKyungbuk", label: "울진군" },
-  { value: "sgguKyungbuk", label: "의성군" },
-  { value: "sgguKyungbuk", label: "청도군" },
-  { value: "sgguKyungbuk", label: "청송군" },
-  { value: "sgguKyungbuk", label: "칠곡군" },
-  { value: "sgguKyungbuk", label: "포항남구" },
-  { value: "sgguKyungbuk", label: "포항북구" },
+  { value: "sgguKyungbuk1", label: "전체" },
+  { value: "sgguKyungbuk2", label: "경산시" },
+  { value: "sgguKyungbuk3", label: "경주시" },
+  { value: "sgguKyungbuk4", label: "고령군" },
+  { value: "sgguKyungbuk5", label: "구미시" },
+  { value: "sgguKyungbuk6", label: "군위군" },
+  { value: "sgguKyungbuk7", label: "김천시" },
+  { value: "sgguKyungbuk8", label: "문경시" },
+  { value: "sgguKyungbuk9", label: "봉화군" },
+  { value: "sgguKyungbuk11", label: "상주시" },
+  { value: "sgguKyungbuk12", label: "성주군" },
+  { value: "sgguKyungbuk13", label: "안동시" },
+  { value: "sgguKyungbuk14", label: "영덕군" },
+  { value: "sgguKyungbuk15", label: "영양군" },
+  { value: "sgguKyungbuk16", label: "영주시" },
+  { value: "sgguKyungbuk17", label: "영천시" },
+  { value: "sgguKyungbuk18", label: "예천군" },
+  { value: "sgguKyungbuk19", label: "울릉군" },
+  { value: "sgguKyungbuk21", label: "울진군" },
+  { value: "sgguKyungbuk22", label: "의성군" },
+  { value: "sgguKyungbuk23", label: "청도군" },
+  { value: "sgguKyungbuk24", label: "청송군" },
+  { value: "sgguKyungbuk25", label: "칠곡군" },
+  { value: "sgguKyungbuk26", label: "포항시 남구" },
+  { value: "sgguKyungbuk27", label: "포항시 북구" },
 ];
 let kyungnamOptions = [
-  { value: "sgguKyungnam", label: "전체" },
-  { value: "sgguKyungnam", label: "거제시" },
-  { value: "sgguKyungnam", label: "거창군" },
-  { value: "sgguKyungnam", label: "고성군" },
-  { value: "sgguKyungnam", label: "김해시" },
-  { value: "sgguKyungnam", label: "남해군" },
-  { value: "sgguKyungnam", label: "밀양시" },
-  { value: "sgguKyungnam", label: "사천시" },
-  { value: "sgguKyungnam", label: "산청군" },
-  { value: "sgguKyungnam", label: "양산시" },
-  { value: "sgguKyungnam", label: "의령군" },
-  { value: "sgguKyungnam", label: "진주시" },
-  { value: "sgguKyungnam", label: "창녕군" },
-  { value: "sgguKyungnam", label: "창원마산합포구" },
-  { value: "sgguKyungnam", label: "창원마산회원구" },
-  { value: "sgguKyungnam", label: "창원성산구" },
-  { value: "sgguKyungnam", label: "창원의창구" },
-  { value: "sgguKyungnam", label: "창원진해구" },
-  { value: "sgguKyungnam", label: "통영시" },
-  { value: "sgguKyungnam", label: "하동군" },
-  { value: "sgguKyungnam", label: "함안군" },
-  { value: "sgguKyungnam", label: "함양군" },
-  { value: "sgguKyungnam", label: "합천군" },
+  { value: "sgguKyungnam1", label: "전체" },
+  { value: "sgguKyungnam2", label: "거제시" },
+  { value: "sgguKyungnam3", label: "거창군" },
+  { value: "sgguKyungnam4", label: "고성군" },
+  { value: "sgguKyungnam5", label: "김해시" },
+  { value: "sgguKyungnam6", label: "남해군" },
+  { value: "sgguKyungnam7", label: "밀양시" },
+  { value: "sgguKyungnam8", label: "사천시" },
+  { value: "sgguKyungnam9", label: "산청군" },
+  { value: "sgguKyungnam11", label: "양산시" },
+  { value: "sgguKyungnam12", label: "의령군" },
+  { value: "sgguKyungnam13", label: "진주시" },
+  { value: "sgguKyungnam14", label: "창녕군" },
+  { value: "sgguKyungnam15", label: "창원시 마산합포구" },
+  { value: "sgguKyungnam16", label: "창원시 마산회원구" },
+  { value: "sgguKyungnam17", label: "창원시 성산구" },
+  { value: "sgguKyungnam18", label: "창원시 의창구" },
+  { value: "sgguKyungnam19", label: "창원시 진해구" },
+  { value: "sgguKyungnam21", label: "통영시" },
+  { value: "sgguKyungnam22", label: "하동군" },
+  { value: "sgguKyungnam23", label: "함안군" },
+  { value: "sgguKyungnam24", label: "함양군" },
+  { value: "sgguKyungnam25", label: "합천군" },
 ];
 let jejuOptions = [
-  { value: "sgguJeju", label: "전체" },
-  { value: "sgguJeju", label: "서귀포시" },
-  { value: "sgguJeju", label: "제주시" },
+  { value: "sgguJeju1", label: "전체" },
+  { value: "sgguJeju2", label: "서귀포시" },
+  { value: "sgguJeju3", label: "제주시" },
 ];
 
 let departOptions = [
@@ -379,7 +379,7 @@ let departOptions = [
   { value: "specialCareIdx_48", label: "한방안이비인후피부과" },
 ];
 
-const Selectclinic = ({ getDataFromChild }) => {
+const Selectclinic = ({ getDataFromChild, currentLocation }) => {
   const location = useLocation();
   let id;
   if (!location.state) id = 0;
@@ -390,7 +390,15 @@ const Selectclinic = ({ getDataFromChild }) => {
     sggu: "전체",
     depart: departOptions[id].label,
   });
+  const selectSidoInputRef = useRef(null);
+  const selectSgguInputRef = useRef(null);
   const selectDepartInputRef = useRef(null);
+
+  const onClearSgguSelect = () => {
+    if (selectSgguInputRef.current) {
+      selectSgguInputRef.current.clearValue();
+    }
+  };
 
   function handleSubmit() {
     getDataFromChild(selectValue);
@@ -400,67 +408,78 @@ const Selectclinic = ({ getDataFromChild }) => {
     switch (selectValue.sido) {
       case "전체":
         return sejongOptions;
-      case "서울":
+      case "서울특별시":
         return seoulOptions;
-      case "부산":
+      case "부산광역시":
         return busanOptions;
-      case "대구":
+      case "대구광역시":
         return daeguOptions;
-      case "인천":
+      case "인천광역시":
         return incheonOptions;
-      case "광주":
+      case "광주광역시":
         return kwangjuOptions;
-      case "대전":
+      case "대전광역시":
         return daejunOptions;
-      case "울산":
+      case "울산광역시":
         return ulsanOptions;
-      case "세종시":
+      case "세종특별자치시":
         return sejongOptions;
-      case "경기":
+      case "경기도":
         return kyungkiOptions;
-      case "강원":
+      case "강원도":
         return kangwonOptions;
-      case "충북":
+      case "충청북도":
         return chungbukOptions;
-      case "충남":
+      case "충청남도":
         return chungnamOptions;
-      case "전북":
+      case "전라북도":
         return jeonbukOptions;
-      case "전남":
+      case "전라남도":
         return jeonnamOptions;
-      case "경북":
+      case "경상북도":
         return kyungbukOptions;
-      case "경남":
+      case "경상남도":
         return kyungnamOptions;
-      case "제주":
+      case "제주특별자치도":
         return jejuOptions;
+      default:
+        return sejongOptions;
     }
   }
+
   return (
     <>
       <div className="c1">
+        {console.log(currentLocation)}
+
         <h5 className="name">지역(시)</h5>
         <Select
           className="basic"
-          ref={selectDepartInputRef}
+          ref={selectSidoInputRef}
           onChange={(e) => {
             if (e) {
+              onClearSgguSelect();
               setSelectValue((prevFromValue) => ({
                 ...prevFromValue,
                 sido: e.label,
+                sggu: "전체",
               }));
             }
           }}
           options={sidoOptions}
           placeholder="선택하세요"
-          defaultValue={sidoOptions[0]}
+          defaultValue={
+            currentLocation[0]
+              ? { value: "currentSido", label: currentLocation[0] }
+              : sejongOptions[0]
+          }
         />
       </div>
       <div className="c2">
         <h5 className="name">지역(구)</h5>
         <Select
           className="basic"
-          ref={selectDepartInputRef}
+          ref={selectSgguInputRef}
           onChange={(e) => {
             if (e) {
               setSelectValue((prevFromValue) => ({
@@ -471,7 +490,11 @@ const Selectclinic = ({ getDataFromChild }) => {
           }}
           options={handleSgguOptions()}
           placeholder="선택하세요"
-          defaultValue={sejongOptions[0]}
+          defaultValue={
+            currentLocation[1]
+              ? { value: "currentSggu", label: currentLocation[1] }
+              : sejongOptions[0]
+          }
         />
       </div>
       <div className="c1">

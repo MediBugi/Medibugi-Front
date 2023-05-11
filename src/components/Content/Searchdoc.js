@@ -6,9 +6,8 @@ function Searchdoc(props) {
   function getDataFromChild(data) {
     props.setData(data);
   }
-
   const location = CurrentLocation();
-  console.log(location);
+
   return (
     <>
       <div className="content">
@@ -19,7 +18,11 @@ function Searchdoc(props) {
         />
         <div className="addr">{location.address}</div>
         <div>
-          <Selectclinic getDataFromChild={getDataFromChild} />
+          <Selectclinic
+            getDataFromChild={getDataFromChild}
+            currentLocation={location.address.split(" ")}
+            // currentLocation={location.address.split(" ")}
+          />
         </div>
       </div>
     </>
