@@ -7,16 +7,17 @@ function Mydoc() {
   const [data, setData] = useState([]);
   async function getMyInfo() {
     var id = sessionStorage.getItem("user");
-    await axios
-      .get("http://localhost:8080/member/getMyInfo", {
-        params: { memberid: id },
-      })
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log("error: ", err.res);
-      });
+      await axios
+        .get("http://localhost:8080/favorite/getFavoriteList", {
+          params: { member_id: id },
+        })
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((err) => {
+          console.log("error: ", err.res);
+        });
+    
   }
 
   useEffect(() => {
