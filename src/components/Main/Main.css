@@ -84,7 +84,7 @@ button {
   align-items: center;
   justify-content: center;
   margin-top: 2%;
- margin-bottom: 0%;
+  margin-bottom: 0%;
 }
 
 .btn {
@@ -110,15 +110,17 @@ button {
   padding: 20px;
 }
 
+.searchLinkBox {
+  margin-bottom: 5%;
+}
+
 .searchLink {
   font-family: "나눔고딕";
   font-size: 20px;
   margin-top: 0%;
   margin-left: 15%;
   margin-right: 10%;
+  margin-bottom: 1%;
   padding: 0px;
-}
-
-.searchLinkBox {
-  margin-bottom: 5%;
+  text-align: center;
 }
