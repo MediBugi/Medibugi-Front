@@ -71,7 +71,6 @@ function SearchDoctor() {
     sggu: "전체",
     depart: department[id],
   });
-  const [page, setPage] = useState(1);
   const date = new Date();
   const handleLoad = async (options) => {
     const items = await getHosInfo(options);
