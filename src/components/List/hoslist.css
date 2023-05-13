@@ -21,3 +21,15 @@
   float: right;
   padding: 40px;
 }
+
+.hoslist-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin: 16px;
+}
+
+.page-link {
+  font-size: 1.25rem;
+}

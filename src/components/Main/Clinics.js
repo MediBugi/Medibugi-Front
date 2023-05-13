@@ -75,7 +75,7 @@ function Clinics() {
       })
       .then((res) => {
         const { choices } = res.data;
-        setRecommend(choices[0].text); // 음악의 제목, 가수 데이터 저장
+        setRecommend(choices[0].text);
       });
     return response;
   };
