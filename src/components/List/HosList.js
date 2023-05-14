@@ -44,6 +44,9 @@ function HosList({ items }) {
   const handlePageChange = (page) => {
     setPage(page);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
   return (
     <>
       <ul>

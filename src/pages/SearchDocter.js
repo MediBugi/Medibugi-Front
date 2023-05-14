@@ -67,14 +67,14 @@ function SearchDoctor() {
 
   const [items, setItems] = useState([]);
   const [paramOptions, setParamOptions] = useState({
-    sido: "전체",
-    sggu: "전체",
+    sido: undefined,
+    sggu: undefined,
     depart: department[id],
   });
   const date = new Date();
   const handleLoad = async (options) => {
+    console.log(options);
     const items = await getHosInfo(options);
-
     setItems(items);
   };
 
@@ -84,6 +84,7 @@ function SearchDoctor() {
       sggu: `${paramOptions.sggu}`,
       depart: `${paramOptions.depart}`,
     });
+    console.log(paramOptions);
   }, [paramOptions.sido, paramOptions.sggu, paramOptions.depart]);
 
   return (

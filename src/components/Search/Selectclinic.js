@@ -386,10 +386,20 @@ const Selectclinic = ({ getDataFromChild, currentLocation }) => {
   let id;
   if (!location.state) id = 0;
   else id = location.state;
+  let initFlag = false;
+
+  if (currentLocation[0]) {
+    initFlag = true;
+  }
 
   const [selectValue, setSelectValue] = useState({
-    sido: "전체",
-    sggu: "전체",
+    sido: "",
+    sggu: "",
+    depart: departOptions[id].label,
+  });
+  const [initValue, setInitValue] = useState({
+    sido: undefined,
+    sggu: undefined,
     depart: departOptions[id].label,
   });
   const [sgguOption, setSgguOption] = useState([{}]);
@@ -405,7 +415,13 @@ const Selectclinic = ({ getDataFromChild, currentLocation }) => {
       sido: currentLocation[0],
       sggu: currentLocation[1],
     }));
+    setInitValue((pre) => ({
+      ...pre,
+      sido: currentLocation[0],
+      sggu: currentLocation[1],
+    }));
   };
+
   const handleSetSidoValue = () => {
     sidoOptions.forEach(function (item) {
       if (item.label === selectValue.sido) {
@@ -488,11 +504,18 @@ const Selectclinic = ({ getDataFromChild, currentLocation }) => {
 
   useEffect(() => {
     initSelectValue();
-  }, [currentLocation]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initFlag]);
+
+  useEffect(() => {
+    getDataFromChild(initValue);
+  }, [initValue.sido, initValue.sggu]);
+
   useEffect(() => {
     handleSgguOptions();
     handleSetSgguValue();
     handleSetSidoValue();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectValue.sido, selectValue.sggu, sgguOption]);
   return (
     <>
