@@ -1,5 +1,4 @@
 import { useState } from "react";
-import FileInput from "./FileInput";
 import RatingInput from "./RatingInput";
 import "./ReviewForm.css";
 
@@ -30,23 +29,8 @@ function ReviewForm(initialPreview) {
 
   return (
     <form className={`ReviewForm`} onSubmit={handleSubmit}>
-      <FileInput
-        className="ReviewForm-preview"
-        name="imgFile"
-        value={values.imgFile}
-        initialPreview={initialPreview}
-        onChange={handleChange}
-      />
       <div className="ReviewForm-rows">
         <div className="ReviewForm-title-rating">
-          {/* 리뷰 타이틀 (치료 목록 등으로 변경) */}
-          <input
-            className="ReviewForm-title"
-            name="title"
-            value={values.title}
-            placeholder="title placeholder"
-            onChange={handleInputChange}
-          />
           {/* 별점 */}
           <RatingInput
             className="ReviewForm-rating"

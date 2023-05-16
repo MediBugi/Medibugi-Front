@@ -61,7 +61,7 @@ function Clinics() {
 
   const fetchOpenApi = async () => {
     const configuration = new Configuration({
-      apiKey: "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",
+      apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     delete configuration.baseOptions.headers["User-Agent"];
     const openai = new OpenAIApi(configuration);
@@ -117,11 +117,15 @@ function Clinics() {
           if (link) {
             return (
               <div className="searchLink" key={link}>
-                <button className="btn btn-outline-secondary"
-            type="button"
-            id="button-addon2" to={"/infolist"} state={index + 1}>
+                <Link
+                  className="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                  to={"/infolist"}
+                  state={index + 1}
+                >
                   {link} 바로가기
-                </button>
+                </Link>
               </div>
             );
           }

@@ -37,7 +37,7 @@ function HosListItem({ item }) {
   );
 }
 
-function HosList({ items }) {
+function HosList({ items, pageFlag }) {
   const limit = 10;
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
@@ -45,6 +45,10 @@ function HosList({ items }) {
   const handlePageChange = (page) => {
     setPage(page);
   };
+
+  useEffect(() => {
+    setPage(1);
+  }, [pageFlag]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
