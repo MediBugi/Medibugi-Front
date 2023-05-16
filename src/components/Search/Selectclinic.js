@@ -396,7 +396,7 @@ const Selectclinic = ({ getDataFromChild, currentLocation }) => {
     sido: "",
     sggu: "",
     depart: departOptions[id].label,
-    page: 1,
+    page: true,
   });
   const [initValue, setInitValue] = useState({
     sido: undefined,

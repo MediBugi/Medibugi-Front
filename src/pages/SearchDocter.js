@@ -82,17 +82,31 @@ function SearchDoctor() {
     sido: undefined,
     sggu: undefined,
     depart: department[id],
-    page: 1,
+    page: false,
   });
-
+  const [isLoading, setIsLoading] = useState(false);
   const date = new Date();
+
   const currentloc = CurrentLocation();
+
+
+
   const handleLoad = async (options) => {
+    setIsLoading(true);
     const items = await getHosInfo(options);
+
     let copy = [...items];
     copy.sort((a,b) => getDistance(currentloc.latitude, currentloc.longitude, a.y, a.x) - getDistance(currentloc.latitude, currentloc.longitude, b.y, b.x))
+    setIsLoading(false);
     setItems(copy);
   };
+
+  useEffect(() => {
+    setParamOptions((pre) => ({
+      ...pre,
+      page: false,
+    }));
+  }, [paramOptions.page]);
 
   useEffect(() => {
     handleLoad({
@@ -109,7 +123,7 @@ function SearchDoctor() {
         <Searchdoc setData={setParamOptions} />
       </div>
       <div className="content hos_list_top">
-        <HosList items={items} />
+        {!isLoading && <HosList items={items} pageFlag={paramOptions.page} />}
       </div>
     </>
   );
