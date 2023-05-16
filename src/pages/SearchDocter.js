@@ -70,10 +70,11 @@ function SearchDoctor() {
     sido: undefined,
     sggu: undefined,
     depart: department[id],
+    page: 1,
   });
+
   const date = new Date();
   const handleLoad = async (options) => {
-    console.log(options);
     const items = await getHosInfo(options);
     setItems(items);
   };
@@ -84,7 +85,6 @@ function SearchDoctor() {
       sggu: `${paramOptions.sggu}`,
       depart: `${paramOptions.depart}`,
     });
-    console.log(paramOptions);
   }, [paramOptions.sido, paramOptions.sggu, paramOptions.depart]);
 
   return (

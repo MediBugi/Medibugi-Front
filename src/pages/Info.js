@@ -1,10 +1,13 @@
+import { useEffect } from "react";
 import InfoList from "../components/Info/InfoList";
 import { useLocation } from "react-router-dom";
 
 function Info() {
   const location = useLocation();
   const item = location.state;
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="main">
