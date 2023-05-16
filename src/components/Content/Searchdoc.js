@@ -6,7 +6,7 @@ function Searchdoc(props) {
   function getDataFromChild(data) {
     props.setData(data);
   }
-  const location = CurrentLocation();
+  const location = props.currentLocation;
 
   return (
     <>

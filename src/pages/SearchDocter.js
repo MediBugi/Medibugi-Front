@@ -4,6 +4,7 @@ import "./pages.css";
 import { getHosInfo } from "../components/API/api";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import CurrentLocation from "../components/Info/CurrentLocation";
 
 let department = [
   "전체",
@@ -73,6 +74,7 @@ function SearchDoctor() {
     page: false,
   });
   const [isLoading, setIsLoading] = useState(false);
+  const currentLocation = CurrentLocation();
   const date = new Date();
 
   const handleLoad = async (options) => {
@@ -101,10 +103,19 @@ function SearchDoctor() {
     <>
       <div className="main">
         <div className="p">의사·병원찾기</div>
-        <Searchdoc setData={setParamOptions} />
+        <Searchdoc
+          setData={setParamOptions}
+          currentLocation={currentLocation}
+        />
       </div>
       <div className="content hos_list_top">
-        {!isLoading && <HosList items={items} pageFlag={paramOptions.page} />}
+        {!isLoading && (
+          <HosList
+            items={items}
+            pageFlag={paramOptions.page}
+            currentLocation={currentLocation}
+          />
+        )}
       </div>
     </>
   );

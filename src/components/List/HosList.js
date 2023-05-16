@@ -6,7 +6,7 @@ import Pagination from "react-js-pagination";
 
 const data = sessionStorage.getItem("user");
 
-function HosListItem({ item }) {
+function HosListItem({ item, currentLocation }) {
   const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function HosListItem({ item }) {
 
   return (
     <div className="hoslist">
-      <Link to={"/infolist/info"} state={item}>
+      <Link to={"/infolist/info"} state={{ item, currentLocation }}>
         {item.yadmNm}
       </Link>
       <DisableBtn isLogin={isLogin} item={item} data={data}></DisableBtn>
@@ -37,7 +37,7 @@ function HosListItem({ item }) {
   );
 }
 
-function HosList({ items, pageFlag }) {
+function HosList({ items, pageFlag, currentLocation }) {
   const limit = 10;
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
@@ -59,7 +59,7 @@ function HosList({ items, pageFlag }) {
         {items.slice(offset, offset + limit).map((item) => {
           return (
             <li key={item.code}>
-              <HosListItem item={item} />
+              <HosListItem item={item} currentLocation={currentLocation} />
             </li>
           );
         })}

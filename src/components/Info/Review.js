@@ -3,11 +3,11 @@ import ReviewForm from "./Review/ReviewForm";
 import "./Review.css";
 import ticketImg from "./Review/assets/ticket.png";
 
-function Review() {
+function Review({ item }) {
   return (
     <>
       <section className="Review-container font-size">
-      <div className="header_1">리뷰</div>
+        <div className="header_1">리뷰</div>
         <br></br>
         <div
           className="Review-ReviewForm"
@@ -15,7 +15,7 @@ function Review() {
             backgroundImage: `url("${ticketImg}")`,
           }}
         >
-          <ReviewForm />
+          <ReviewForm item={item} />
         </div>
         <div className="Review-ReviewList">
           <div className="Review-load-more-button" />

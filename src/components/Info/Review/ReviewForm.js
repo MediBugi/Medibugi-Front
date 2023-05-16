@@ -1,14 +1,18 @@
 import { useState } from "react";
 import RatingInput from "./RatingInput";
 import "./ReviewForm.css";
+import { createReview } from "../../API/api";
 
-function ReviewForm(initialPreview) {
+function ReviewForm({ item }) {
   const [values, setValues] = useState({
-    title: "",
     rating: 0,
     content: "",
-    imgFile: null,
   });
+
+  const INITIAL_VALUES = {
+    rating: 0,
+    content: "",
+  };
 
   const handleChange = (name, value) => {
     setValues((prevValues) => ({
@@ -22,16 +26,22 @@ function ReviewForm(initialPreview) {
     handleChange(name, value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(values);
+    const formData = new FormData();
+    formData.append("rating", values.rating);
+    formData.append("content", values.content);
+    await createReview(formData);
+    setValues(INITIAL_VALUES);
   };
 
   return (
     <form className={`ReviewForm`} onSubmit={handleSubmit}>
       <div className="ReviewForm-rows">
+        <div className="ReviewForm-title" name="title">
+          {item.yadmNm}
+        </div>
         <div className="ReviewForm-title-rating">
-          {/* 별점 */}
           <RatingInput
             className="ReviewForm-rating"
             name="rating"
@@ -39,18 +49,17 @@ function ReviewForm(initialPreview) {
             onChange={handleChange}
           />
         </div>
-        {/* 리뷰 내용 작성 */}
         <textarea
           className="ReviewForm-content"
           name="content"
           value={values.content}
-          placeholder="content placeholder"
+          placeholder="리뷰 내용을 작성해 주세요"
           onChange={handleInputChange}
         />
         <div className="ReviewForm-error-buttons">
           <div className="ReviewForm-buttons">
             <button className="ReviewForm-submit-button" type="submit">
-              confirm button
+              리뷰 저장
             </button>
           </div>
         </div>

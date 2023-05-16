@@ -3,11 +3,6 @@
   max-width: 100%;
 }
 
-.ReviewForm-preview {
-  flex: none;
-  margin-right: 22px;
-}
-
 .ReviewForm-rows {
   display: flex;
   flex: 1 1;
@@ -17,13 +12,16 @@
 
 .ReviewForm-title-rating {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: 21px;
 }
 
-.ReviewForm-title-rating .ReviewForm-title {
-  flex: 1 1;
-  margin-right: 22px;
+.ReviewForm-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
   min-width: 0;
 }
 
@@ -56,7 +54,6 @@
   font-size: 14px;
 }
 
-.ReviewForm-cancel-button,
 .ReviewForm-submit-button {
   padding: 11px 40px;
   border: none;
@@ -67,7 +64,7 @@
   background-color: transparent;
 }
 
-.ReviewForm-buttons .ReviewForm-cancel-button {
+.ReviewForm-buttons {
   margin-right: 10px;
 }
 

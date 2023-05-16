@@ -58,18 +58,18 @@ let department = [
 function Clinics() {
   const [userInfo, setUserInfo] = useState();
   const [recommend, setRecommend] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   const fetchOpenApi = async () => {
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     delete configuration.baseOptions.headers["User-Agent"];
     const openai = new OpenAIApi(configuration);
-
+    setIsLoading(true);
     const response = await openai
       .createCompletion({
         model: "text-davinci-003",
-        prompt: `${userInfo}증상이 있을 때 가야 할 medical department를 알려줘`,
+        prompt: `너가 의사라고 가정하고, ${userInfo}증상이 있을 때 가야 할 medical department를 알려줘`,
         temperature: 0,
         max_tokens: 1000,
       })
@@ -77,6 +77,7 @@ function Clinics() {
         const { choices } = res.data;
         setRecommend(choices[0].text);
       });
+    setIsLoading(false);
     return response;
   };
 
@@ -110,7 +111,13 @@ function Clinics() {
         </div>
       </div>
 
-      <div className="searchRes">{recommend}</div>
+      {isLoading ? (
+        <div className="searchRes searchLoading">
+          답변을 기다리는 중 입니다.
+        </div>
+      ) : (
+        <div className="searchRes">{recommend}</div>
+      )}
 
       <div className="searchLinkBox">
         {ai.map((link, index) => {

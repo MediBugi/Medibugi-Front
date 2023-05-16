@@ -99,6 +99,9 @@ button {
   cursor: pointer;
 }
 
+.searchLoading {
+  text-align: center;
+}
 .searchRes {
   color: black;
   font-family: "나눔고딕";

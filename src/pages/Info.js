@@ -1,10 +1,14 @@
 import { useEffect } from "react";
 import InfoList from "../components/Info/InfoList";
 import { useLocation } from "react-router-dom";
+import { ConstructionOutlined, LocationOn } from "@mui/icons-material";
 
 function Info() {
   const location = useLocation();
-  const item = location.state;
+  const item = location.state.item;
+  const currentLocation = location.state.currentLocation;
+  console.log(currentLocation);
+  console.log(item);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -13,7 +17,7 @@ function Info() {
       <div className="main">
         <div className="p">병원 정보</div>
         <div className="info-main">
-          <InfoList item={item}></InfoList>;
+          <InfoList item={item} currentLocation={currentLocation}></InfoList>;
         </div>
       </div>
     </>
