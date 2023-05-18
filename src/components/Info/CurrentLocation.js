@@ -11,8 +11,10 @@ const CurrentLocation = () => {
     let coord = new kakao.maps.LatLng(lat, lng);
     let callback = function (result, status) {
       if (status === kakao.maps.services.Status.OK) {
-        console.log(result);
-        setAddress(result[0].road_address.address_name);
+        if (result[0].road_address)
+          setAddress(result[0].road_address.address_name);
+        else
+          setAddress(result[0].address.address_name);
       }
     };
     geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
