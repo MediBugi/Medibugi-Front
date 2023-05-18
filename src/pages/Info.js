@@ -5,9 +5,7 @@ import { ConstructionOutlined, LocationOn } from "@mui/icons-material";
 
 function Info() {
   const location = useLocation();
-  const item = location.state.item;
-  const currentLocation = location.state.currentLocation;
-  console.log(currentLocation);
+  const item = location.state;
   console.log(item);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,7 +15,7 @@ function Info() {
       <div className="main">
         <div className="p">병원 정보</div>
         <div className="info-main">
-          <InfoList item={item} currentLocation={currentLocation}></InfoList>;
+          <InfoList item={item}></InfoList>;
         </div>
       </div>
     </>

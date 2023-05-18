@@ -1,14 +1,39 @@
 import "./hoslist.css";
 import { Link } from "react-router-dom";
-import DisableBtn from "./HosButton";
 import React, { useEffect, useState } from "react";
 import Pagination from "react-js-pagination";
+import CurrentLocation from "../Info/CurrentLocation";
 
 const data = sessionStorage.getItem("user");
+function getDistance(lat1, lng1, lat2, lng2) {
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2 - lat1); // deg2rad below
+  var dLon = deg2rad(lng2 - lng1);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+  return Math.round(d * 100) / 100;
+}
 
-function HosListItem({ item, currentLocation }) {
+function HosListItem({ item, departOption }) {
   const [isLogin, setIsLogin] = useState(false);
+  const currentloc = CurrentLocation();
 
+  // const mediDepart = () => {
+  //   if (item.mediDepart.includes(departOption)) {
+  //     return depart;
+  //   } else {
+  //     return depart;
+  //   }
+  // };
   useEffect(() => {
     if (sessionStorage.getItem("user")) {
       setIsLogin(true);
@@ -17,10 +42,9 @@ function HosListItem({ item, currentLocation }) {
 
   return (
     <div className="hoslist">
-      <Link to={"/infolist/info"} state={{ item, currentLocation }}>
+      <Link to={"/infolist/info"} state={item}>
         {item.yadmNm}
       </Link>
-      <DisableBtn isLogin={isLogin} item={item} data={data}></DisableBtn>
       <div>
         <div>주 소 : {item.addr}</div>
       </div>
@@ -33,11 +57,23 @@ function HosListItem({ item, currentLocation }) {
       <div>
         <div>진료과목 : {item.mediDepart}</div>
       </div>
+      <div>
+        <div>
+          거리 :{" "}
+          {getDistance(
+            currentloc.latitude,
+            currentloc.longitude,
+            item.y,
+            item.x
+          )}
+          km
+        </div>
+      </div>
     </div>
   );
 }
 
-function HosList({ items, pageFlag, currentLocation }) {
+function HosList({ items, pageFlag, departOption }) {
   const limit = 10;
   const [page, setPage] = useState(1);
   const offset = (page - 1) * limit;
@@ -59,7 +95,7 @@ function HosList({ items, pageFlag, currentLocation }) {
         {items.slice(offset, offset + limit).map((item) => {
           return (
             <li key={item.code}>
-              <HosListItem item={item} currentLocation={currentLocation} />
+              <HosListItem item={item} departOption={departOption} />
             </li>
           );
         })}

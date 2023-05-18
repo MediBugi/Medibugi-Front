@@ -59,7 +59,23 @@ let department = [
   "흉부외과",
   "한방안이비인후피부과",
 ];
-
+function getDistance(lat1, lng1, lat2, lng2) {
+  function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2 - lat1); // deg2rad below
+  var dLon = deg2rad(lng2 - lng1);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat1)) *
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+  return d;
+}
 function SearchDoctor() {
   const location = useLocation();
   let id;
@@ -74,14 +90,22 @@ function SearchDoctor() {
     page: false,
   });
   const [isLoading, setIsLoading] = useState(false);
-  const currentLocation = CurrentLocation();
   const date = new Date();
+
+  const currentloc = CurrentLocation();
 
   const handleLoad = async (options) => {
     setIsLoading(true);
     const items = await getHosInfo(options);
+
+    let copy = [...items];
+    copy.sort(
+      (a, b) =>
+        getDistance(currentloc.latitude, currentloc.longitude, a.y, a.x) -
+        getDistance(currentloc.latitude, currentloc.longitude, b.y, b.x)
+    );
     setIsLoading(false);
-    setItems(items);
+    setItems(copy);
   };
 
   useEffect(() => {
@@ -103,17 +127,14 @@ function SearchDoctor() {
     <>
       <div className="main">
         <div className="p">의사·병원찾기</div>
-        <Searchdoc
-          setData={setParamOptions}
-          currentLocation={currentLocation}
-        />
+        <Searchdoc setData={setParamOptions} currentLocation={currentloc} />
       </div>
       <div className="content hos_list_top">
         {!isLoading && (
           <HosList
             items={items}
             pageFlag={paramOptions.page}
-            currentLocation={currentLocation}
+            departOption={paramOptions.depart}
           />
         )}
       </div>

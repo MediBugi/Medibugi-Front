@@ -15,6 +15,7 @@
     "bootstrap": "^5.2.3",
     "buffer": "^6.0.3",
     "dotenv": "^16.0.3",
+    "kakao-js-sdk": "^1.2.3",
     "openai": "^3.2.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
@@ -56,5 +57,6 @@
   },
   "devDependencies": {
     "@types/navermaps": "^3.6.4"
-  }
+  },
+  "proxy": "https://naveropenapi.apigw.ntruss.com"
 }

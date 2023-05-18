@@ -92,3 +92,28 @@ li {
   color: black;
   font-weight: lighter;
 }
+
+.hoslist {
+  font-family: "나눔고딕";
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.hos_list_top {
+  margin-top: 146px;
+}
+
+.addFav {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.addFavvv {
+  font-size: 0px;
+  display: inline-block;
+  float: right;
+  padding: 0px;
+  
+}
