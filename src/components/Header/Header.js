@@ -5,12 +5,11 @@ import { Routes, Route } from "react-router-dom";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import SignupComplete from "../../pages/SingupComplete";
-import "./Header.css";
 
 function Header(props) {
   const onClickLogout = () => {
     sessionStorage.removeItem("user");
-    document.location.href = "/";
+    localStorage.removeItem("data");
   };
 
   return (
@@ -22,9 +21,7 @@ function Header(props) {
           </Navbar.Brand>
           <Nav className="justify-content-end">
             {props.isLogin ? (
-              <button className="logout-btn" onClick={onClickLogout}>
-                로그아웃
-              </button>
+              <Nav.Link href="/" onClick={onClickLogout}>로그아웃</Nav.Link>
             ) : (
               <>
                 <Nav.Link href="/login">로그인</Nav.Link>
