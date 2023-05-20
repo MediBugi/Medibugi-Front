@@ -17,7 +17,7 @@ function DisableBtn(props) {
         .then(res => {
           console.log(res.data);
           for(var i=0; i<res.data.length; i++) {
-            if (props.item.yadmNm === res.data.at(i).hospitalName) {
+            if (props.item.yadmNm === res.data.at(i).yadmNm) {
               setActiveButton('button1');
            }
         }}).catch(err => {
