@@ -20,18 +20,17 @@ function ChartDoc(props) {
                 <td rowspan="3">
                   <img src="img/doctor.png" width="100" height="100" />
                 </td>
-                <td className="name_doc">{item.hospitalName} </td>
-                {console.log("여기 => " + item.hospitalName)}
+                <td className="name_doc">{item.yadmNm} </td>
               </tr>
 
               <tr>
                 <td className="belong_doc">
-                  병원구분 : 종합병원 
+                  병원구분 : {item.clCdNm}
                 </td>
               </tr>
 
               <tr>
-                <td className="subject_doc">진료과목 : 외과</td>
+                <td className="subject_doc">진료과목 : {item.mediDepart}</td>
               </tr>
             </table>
           )
