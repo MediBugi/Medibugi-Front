@@ -1,9 +1,6 @@
 import "./ChartDoc.css";
 
 function ChartDoc(props) {
-  for(var i =0; i<props.data.length; i++){
-    console.log(props.data.at(i).hospitalName)
-  }
   return (
     <>
       <div className="content1">
@@ -14,24 +11,21 @@ function ChartDoc(props) {
 
         {props.data.map((item)=>{
           return (
-
             <table className="ChartTable">
-              <tr>
-                <td rowspan="3">
-                  <img src="img/doctor.png" width="100" height="100" />
-                </td>
-                <td className="name_doc">{item.yadmNm} </td>
-              </tr>
-
-              <tr>
-                <td className="belong_doc">
-                  병원구분 : {item.clCdNm}
-                </td>
-              </tr>
-
-              <tr>
-                <td className="subject_doc">진료과목 : {item.mediDepart}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td rowSpan="3">
+                    <img src="img/doctor.png" width="100" height="100" />
+                  </td>
+                  <td className="name_doc">{item.yadmNm}</td>
+                </tr>
+                <tr>
+                  <td className="belong_doc">병원구분 : {item.clCdNm}</td>
+                </tr>
+                <tr>
+                  <td className="subject_doc">진료과목 : {item.mediDepart}</td>
+                </tr>
+              </tbody>
             </table>
           )
         })}

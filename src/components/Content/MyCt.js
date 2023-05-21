@@ -3,7 +3,6 @@ import MyInfo from "../Chart/MyInfo";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 function MyCt() {
   const [data ,setData] = useState([]);
 
@@ -25,9 +24,7 @@ function MyCt() {
   
   return (
     <div className="content_chart">
-        <p>
         <MyInfo data={data} />
-        </p>
     </div>
   );
 }
