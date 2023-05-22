@@ -124,3 +124,13 @@ button {
   padding: 0px;
   text-align: center;
 }
+
+.spinner {
+  text-align: center;
+  margin-top: -30px;
+}
+
+.loading-text {
+  font-size: 16px;
+  color:#37444a;
+}

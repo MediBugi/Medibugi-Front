@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { PulseLoader } from 'react-spinners';
+import "./Main.css";
 const { Configuration, OpenAIApi } = require("openai");
 
 let department = [
@@ -58,6 +60,7 @@ let department = [
 function Clinics() {
   const [userInfo, setUserInfo] = useState();
   const [recommend, setRecommend] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const fetchOpenApi = async () => {
     const configuration = new Configuration({
@@ -65,7 +68,7 @@ function Clinics() {
     });
     delete configuration.baseOptions.headers["User-Agent"];
     const openai = new OpenAIApi(configuration);
-
+    setLoading(true);
     const response = await openai
       .createCompletion({
         model: "text-davinci-003",
@@ -76,6 +79,7 @@ function Clinics() {
       .then((res) => {
         const { choices } = res.data;
         setRecommend(choices[0].text);
+        setLoading(false);
       });
     return response;
   };
@@ -109,8 +113,17 @@ function Clinics() {
           </button>
         </div>
       </div>
-
-      <div className="searchRes">{recommend}</div>
+      {loading && 
+      <div className='spinner'>
+        <PulseLoader
+        color= "#0fa2f1"
+        />
+        <span className='loading-text'>
+          입력하신 증상에 적합한 진료과를 찾는 중입니다.<br/>잠시만 기다려 주세요.
+        </span>
+      </div>
+      }
+      {!loading && <><div className="searchRes">{recommend}</div>
 
       <div className="searchLinkBox">
         {ai.map((link, index) => {
@@ -130,7 +143,7 @@ function Clinics() {
             );
           }
         })}
-      </div>
+      </div></>}
     </>
   );
 }
