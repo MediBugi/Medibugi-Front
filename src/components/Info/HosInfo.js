@@ -15,11 +15,16 @@ function HosInfo({ item }) {
         <div className="content-flex">
           <div className="header_1">기본정보</div>
           <div>
+          <div className="header_3_1">
+              주소 :  <span className="telEff">{item.addr}</span>
+            </div>
+            
+            <div className="hosDep">진료과 : <span className="telEff">{item.clCdNm}</span></div>
             <div className="header_3_1">
-              전화번호 :{" "}
-              <a href={telNum} className="telEff">
+              전화번호 : <span className="telEff">{item.telno}</span>
+              {/* <a href={telNum} className="telEff">
                 {item.telno}
-              </a>
+              </a> */}
             </div>
             <div className="header_3">
               병원 홈페이지 : <a href={item.hospUrl}>{item.hospUrl}</a>
