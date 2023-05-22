@@ -10,18 +10,6 @@
   margin-top: 146px;
 }
 
-.addFav {
-  font-weight: bold;
-  padding: 5px;
-}
-
-.addFavvv {
-  font-size: 20px;
-  display: inline-block;
-  float: right;
-  padding: 40px;
-}
-
 .hoslist-pagination {
   display: flex;
   justify-content: center;
@@ -32,4 +20,26 @@
 
 .page-link {
   font-size: 1.25rem;
+}
+
+.hoslist-name {
+  text-decoration-line: none;
+  font-weight: bold;
+  color:#4b4040;
+  font-size: 19px;
+}
+
+.hoslist-name:hover {
+  text-decoration-line: underline;
+  color:#4b4040;
+}
+
+.hoslist-title {
+  font-size: 15px;
+  color: #868686;
+}
+
+.hoslist-detail {
+  font-size: 18px;
+  color: #2d2828;
 }
