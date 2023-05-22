@@ -119,7 +119,7 @@ function SearchDoctor() {
   return (
     <>
       <div className="main">
-        <div className="p">의사·병원찾기</div>
+        <div className="p">병원찾기</div>
         <Searchdoc setData={setParamOptions} />
       </div>
       <div className="content hos_list_top">
