@@ -3,7 +3,7 @@ import HosList from "../components/List/HosList";
 import "./pages.css";
 import { getHosInfo } from "../components/API/api";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import CurrentLocation from "../components/Info/CurrentLocation";
 
 let department = [
@@ -89,7 +89,7 @@ function SearchDoctor() {
 
   const currentloc = CurrentLocation();
 
-
+  const recent_search = JSON.parse(localStorage.getItem("data"));
 
   const handleLoad = async (options) => {
     setIsLoading(true);
@@ -125,6 +125,21 @@ function SearchDoctor() {
       <div className="content hos_list_top">
         {!isLoading && <HosList items={items} pageFlag={paramOptions.page} />}
       </div>
+      {
+        recent_search && !isLoading && <>
+        <div className="recent">
+          <p className="recent-title">최근 본 병원</p>
+          {
+            recent_search ? recent_search.map((a, i) => (
+                <div className="recent-hos-div">
+                  ·<Link className="recent-hos" to={"/infolist/info"} state={recent_search[i]}>
+                  {recent_search[i].yadmNm}
+                  </Link>
+                </div>
+            )).slice(0,4) : null
+          }
+        </div></>
+      }
     </>
   );
 }

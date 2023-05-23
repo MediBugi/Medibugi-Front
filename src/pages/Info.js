@@ -7,6 +7,18 @@ function Info() {
   const item = location.state;
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    let recent_search = localStorage.getItem("data");
+    if (recent_search == null) {
+      recent_search = [];
+    } else {
+      recent_search = JSON.parse(recent_search);
+    }
+
+    recent_search.unshift(item);
+    recent_search = new Set(recent_search.map(JSON.stringify));
+    recent_search = [...recent_search].map(JSON.parse);
+    localStorage.setItem("data", JSON.stringify(recent_search));
   }, []);
   return (
     <>
