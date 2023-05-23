@@ -1,0 +1,18 @@
+.scroll_container {
+    position: fixed;
+    right: 2%;
+    bottom: 4%;
+    z-index: 1;
+}
+
+.scroll_container button {
+    font-weight: bold;
+    font-size: 15px;
+    padding :15px 12px;
+    background-color: #1b9cff;
+    color: #fff;
+    border: 1px solid #1b9cff;
+    border-radius: 50%;
+    outline: none;
+    text-align: center;
+}

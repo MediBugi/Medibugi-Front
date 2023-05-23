@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Pagination from "react-js-pagination";
 import CurrentLocation from "../Info/CurrentLocation";
 
-const data = sessionStorage.getItem("user");
 function getDistance(lat1, lng1, lat2, lng2) {
   function deg2rad(deg) {
     return deg * (Math.PI / 180);
@@ -52,22 +51,36 @@ function HosListItem({ item, departOption }) {
 
   return (
     <div className="hoslist">
-      <Link to={"/infolist/info"} state={item}>
+      <Link className="hoslist-name" to={"/infolist/info"} state={item}>
         {item.yadmNm}
       </Link>
       <div>
-        <div>주 소 : {item.addr}</div>
+        <span className="hoslist-title">거 &nbsp;&nbsp;&nbsp;&nbsp; 리 : </span>
+        <span className="hoslist-detail">
+          {getDistance(
+            currentloc.latitude,
+            currentloc.longitude,
+            item.y,
+            item.x
+          )}
+          km
+        </span>
       </div>
       <div>
-        <div>전화번호 : {item.telno}</div>
+        <span className="hoslist-title">주 &nbsp;&nbsp;&nbsp;&nbsp; 소 : </span>
+        <span className="hoslist-detail">{item.addr}</span>
       </div>
       <div>
-        <div>병원구분 : {item.clCdNm} </div>
+        <span className="hoslist-title">전화번호 : </span>
+        <span className="hoslist-detail">{item.telno}</span>
       </div>
       <div>
-        <div>진료과목 : {departCheck}</div>
+        <span className="hoslist-title">병원구분 : </span>
+        <span className="hoslist-detail">{item.clCdNm}</span>
       </div>
       <div>
+        <span className="hoslist-title">진료과목 : </span>
+        <span className="hoslist-detail">{departCheck}</span>
         <div>
           거리 :{" "}
           {getDistance(

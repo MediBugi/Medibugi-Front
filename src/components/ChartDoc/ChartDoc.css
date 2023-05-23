@@ -14,3 +14,14 @@
   margin-left: 5%;
   margin-bottom: 2%;
 }
+
+.link_doc {
+  text-decoration-line: none;
+  color:#4b4040;
+  font-size: 21px;
+}
+
+.link_doc:hover {
+  text-decoration-line: underline;
+  color:#4b4040;
+}

@@ -7,7 +7,8 @@ function Info({data}) {
             border="0"
             width="990"
             height="265"
-            cellspacing="10">
+            cellSpacing="10">
+                <tbody>
                 <tr>
                     <td className="table11">이름</td>
                     <td className="table22">{data.name}</td>
@@ -32,8 +33,8 @@ function Info({data}) {
                     <td className="table11">전화번호</td>
                     <td className="table22">{data.telno}</td>
                 </tr>
+                </tbody>
         </table>
-
         </>
     );
 }

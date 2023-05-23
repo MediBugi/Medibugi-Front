@@ -17,7 +17,6 @@ function Mydoc() {
         .catch((err) => {
           console.log("error: ", err.res);
         });
-    
   }
 
   useEffect(() => {
@@ -26,9 +25,7 @@ function Mydoc() {
 
   return (
     <div className="content_chart">
-      <p>
         <ChartDoc data={data}></ChartDoc>
-      </p>
     </div>
   );
 }

@@ -119,3 +119,40 @@ li {
   float: right;
   padding: 0px;
 }
+
+.hosDep {
+  font-size: 15px;
+  color: gray;
+  font-weight: bold;
+  /*display: inline-block;*/
+}
+
+.breakTime {
+  /*display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: -20px;
+  text-align:center;
+  background-color:aquamarine;
+  */
+  color: #1b9cff;
+  font-weight: bold;
+  border: 3px solid;
+  padding: 20px;
+  width: 300px;
+  display: table-cell;
+  border-radius: 30px;
+  vertical-align: middle;
+  margin-left: 250px;
+  margin-top: 200px;
+}
+
+.breakTime22 {
+  margin: inline-block;
+}
+
+.breakTime33 {
+  font-weight: lighter;
+  /*color: black;*/
+}

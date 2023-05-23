@@ -3,7 +3,7 @@ import HosList from "../components/List/HosList";
 import "./pages.css";
 import { getHosInfo } from "../components/API/api";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import CurrentLocation from "../components/Info/CurrentLocation";
 
 let department = [
@@ -77,7 +77,7 @@ function getDistance(lat1, lng1, lat2, lng2) {
   return d;
 }
 function setHosOpen(item) {
-  const date = new Date();
+  const date = new Date("May 23, 2023 14:00:00");
   const time = date.toTimeString();
   const hour = Number(time[0] + time[1] + time[3] + time[4]);
   switch (date.getDay()) {
@@ -144,6 +144,8 @@ function SearchDoctor() {
 
   const currentloc = CurrentLocation();
 
+  const recent_search = JSON.parse(localStorage.getItem("data"));
+
   const handleLoad = async (options) => {
     setIsLoading(true);
     const items = await getHosInfo(options);
@@ -186,7 +188,7 @@ function SearchDoctor() {
   return (
     <>
       <div className="main">
-        <div className="p">의사·병원찾기</div>
+        <div className="p">병원찾기</div>
         <Searchdoc setData={setParamOptions} currentLocation={currentloc} />
       </div>
       <div className="content hos_list_top">
@@ -198,6 +200,29 @@ function SearchDoctor() {
           />
         )}
       </div>
+      {recent_search && !isLoading && (
+        <>
+          <div className="recent">
+            <p className="recent-title">최근 본 병원</p>
+            {recent_search
+              ? recent_search
+                  .map((a, i) => (
+                    <div className="recent-hos-div">
+                      ·
+                      <Link
+                        className="recent-hos"
+                        to={"/infolist/info"}
+                        state={recent_search[i]}
+                      >
+                        {recent_search[i].yadmNm}
+                      </Link>
+                    </div>
+                  ))
+                  .slice(0, 4)
+              : null}
+          </div>
+        </>
+      )}
     </>
   );
 }

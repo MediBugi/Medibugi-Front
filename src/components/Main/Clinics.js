@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { PulseLoader } from "react-spinners";
+import "./Main.css";
 const { Configuration, OpenAIApi } = require("openai");
 
 let department = [
@@ -58,14 +60,15 @@ let department = [
 function Clinics() {
   const [userInfo, setUserInfo] = useState();
   const [recommend, setRecommend] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const fetchOpenApi = async () => {
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     delete configuration.baseOptions.headers["User-Agent"];
     const openai = new OpenAIApi(configuration);
-    setIsLoading(true);
+
     const response = await openai
       .createCompletion({
         model: "text-davinci-003",
@@ -76,8 +79,9 @@ function Clinics() {
       .then((res) => {
         const { choices } = res.data;
         setRecommend(choices[0].text);
+        setLoading(false);
       });
-    setIsLoading(false);
+
     return response;
   };
 
@@ -110,34 +114,41 @@ function Clinics() {
           </button>
         </div>
       </div>
-
-      {isLoading ? (
-        <div className="searchRes searchLoading">
-          답변을 기다리는 중 입니다.
+      {loading && (
+        <div className="spinner">
+          <PulseLoader color="#0fa2f1" />
+          <span className="loading-text">
+            입력하신 증상에 적합한 진료과를 찾는 중입니다.
+            <br />
+            잠시만 기다려 주세요.
+          </span>
         </div>
-      ) : (
-        <div className="searchRes">{recommend}</div>
       )}
+      {!loading && (
+        <>
+          <div className="searchRes">{recommend}</div>
 
-      <div className="searchLinkBox">
-        {ai.map((link, index) => {
-          if (link) {
-            return (
-              <div className="searchLink" key={link}>
-                <Link
-                  className="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                  to={"/infolist"}
-                  state={index + 1}
-                >
-                  {link} 바로가기
-                </Link>
-              </div>
-            );
-          }
-        })}
-      </div>
+          <div className="searchLinkBox">
+            {ai.map((link, index) => {
+              if (link) {
+                return (
+                  <div className="searchLink" key={link}>
+                    <Link
+                      className="btn btn-outline-secondary"
+                      type="button"
+                      id="button-addon2"
+                      to={"/infolist"}
+                      state={index + 1}
+                    >
+                      {link} 바로가기
+                    </Link>
+                  </div>
+                );
+              }
+            })}
+          </div>
+        </>
+      )}
     </>
   );
 }

@@ -72,20 +72,20 @@ function OpenTime({ item }) {
               </li>
             </ul>
           </div>
-          <div className="content-flex">
-            <ul>
-              <li>
-                <div className="margin inline-block">
-                  점심시간 : {item.lunchNom}
-                </div>
-              </li>
-              <li>
-                <div className="margin inline-block">
-                  공휴일 : {item.restDay}
-                </div>
-              </li>
-            </ul>
+          
+
+          <div className="breakTime">
+            <div className="breakTime22">
+              <span className="breakTime33">점심시간 : </span>{item.lunchNom}
+            </div>
+            <div className="breakTime22">
+            <span className="breakTime33">공휴일 : </span>{item.restDay}
+            </div>
           </div>
+
+
+            
+
         </div>
       </section>
     </>

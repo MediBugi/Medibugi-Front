@@ -85,3 +85,38 @@
   font-weight: bold;
   width: 150px;
 }
+
+.recent {
+  border: 1px solid #dbdbdb;
+  position: fixed; 
+  right: 50%; 
+  top: 380px; 
+  margin-right: -750px;
+  width: 13%;
+  background-color: white;
+}
+
+.recent-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2f2f2f;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.recent-hos-div {
+  margin-left: 10px;
+}
+
+.recent-hos {
+  color:#4b4040;
+  text-decoration-line: none;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.recent-hos:hover{
+  text-decoration-line: underline;
+  color:#4b4040;
+}

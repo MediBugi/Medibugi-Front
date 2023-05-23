@@ -5,7 +5,7 @@ function MyChart() {
   return (
     <>
       <div className="main">
-        <div className="p">마이 차트</div>
+        <div className="p">MY 차트</div>
         <MyCt />
       </div>
     </>
