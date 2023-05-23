@@ -58,6 +58,5 @@
   },
   "devDependencies": {
     "@types/navermaps": "^3.6.4"
-  },
-  "proxy": "https://naveropenapi.apigw.ntruss.com"
+  }
 }
