@@ -3,16 +3,16 @@ import RatingInput from "./RatingInput";
 import "./ReviewForm.css";
 import { createReview } from "../../API/api";
 
-function ReviewForm({ item }) {
+function ReviewForm({ item, data, onCreateSuccess }) {
   const [values, setValues] = useState({
     rating: 0,
     content: "",
   });
-
   const INITIAL_VALUES = {
     rating: 0,
     content: "",
   };
+  let writeTime = new Date().getTime();
 
   const handleChange = (name, value) => {
     setValues((prevValues) => ({
@@ -28,11 +28,19 @@ function ReviewForm({ item }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("rating", values.rating);
-    formData.append("content", values.content);
-    await createReview(formData);
-    setValues(INITIAL_VALUES);
+    if (values.rating && values.content) {
+      const formData = new FormData();
+      formData.append("rating", values.rating);
+      formData.append("content", values.content);
+      formData.append("writeTime", writeTime);
+      const result = await createReview({
+        formData: formData,
+        memberid: data,
+        hoscnt: item.hoscnt,
+      });
+      setValues(INITIAL_VALUES);
+      onCreateSuccess(result);
+    }
   };
 
   return (

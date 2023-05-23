@@ -33,3 +33,10 @@
 .page-link {
   font-size: 1.25rem;
 }
+
+.depart {
+  display: inline;
+}
+.depart-check {
+  color: blue;
+}

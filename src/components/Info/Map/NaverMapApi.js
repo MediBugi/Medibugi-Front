@@ -15,7 +15,7 @@ function NaverMapApi({ item }) {
           position: navermaps.Position.TOP_LEFT,
         }}
         defaultCenter={new navermaps.LatLng(item.y, item.x)}
-        defaultZoom={18}
+        defaultZoom={19}
         minZoom={6}
         maxZoom={21}
         logoControl

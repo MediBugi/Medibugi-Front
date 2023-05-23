@@ -78,6 +78,9 @@ section {
   display: inline-block;
 }
 
+.header_3_1_1 {
+  width: 52px;
+}
 .subbb {
   display: inline-block;
 }
@@ -115,5 +118,4 @@ li {
   display: inline-block;
   float: right;
   padding: 0px;
-  
 }

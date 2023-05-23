@@ -3,41 +3,10 @@ import "./Info.css";
 import NaverMapApi from "./Map/NaverMapApi";
 import { Container as MapDiv, NavermapsProvider } from "react-naver-maps";
 import { Link } from "react-router-dom";
-import { initKakao } from "kakao-js-sdk";
 
 function LocationInfo({ item }) {
-  initKakao({
-    apiKey: "61b7aef6ed3635f5a10e467126230fb8",
-  });
   const currentloc = CurrentLocation();
-  const openKakaoMapDirections = (e) => {
-    e.preventDefault();
-    var startLatitude = currentloc.latitude;
-    var startLongitude = currentloc.longitude;
-    var endLatitude = item.y;
-    var endLongitude = item.x;
-
-    var mapOptions = {
-      center: new window.kakao.maps.LatLng(startLatitude, startLongitude),
-      level: 3,
-    };
-
-    var map = new window.kakao.maps.Map(
-      document.getElementById("map"),
-      mapOptions
-    );
-
-    var directions = new window.kakao.maps.services.Directions();
-    var start = new window.kakao.maps.LatLng(startLatitude, startLongitude);
-    var end = new window.kakao.maps.LatLng(endLatitude, endLongitude);
-
-    directions.route({
-      start: start,
-      end: end,
-      map: map,
-    });
-  };
-
+  const url = `http://map.naver.com/index.nhn?slng=${currentloc.longitude}&slat=${currentloc.latitude}&stext=${currentloc.address}&elng=${item.x}&elat=${item.y}&pathType=1&showMap=true&etext=${item.yadmNm}&menu=route`;
   return (
     <>
       <section className="font-size">
@@ -55,7 +24,11 @@ function LocationInfo({ item }) {
             </MapDiv>
           </NavermapsProvider>
         </div>
-        <button onClick={openKakaoMapDirections}>길찾기</button>
+        <button>
+          <Link target="_blank" to={url}>
+            길찾기
+          </Link>
+        </button>
       </section>
     </>
   );

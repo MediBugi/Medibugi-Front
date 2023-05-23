@@ -6,7 +6,7 @@ import { ConstructionOutlined, LocationOn } from "@mui/icons-material";
 function Info() {
   const location = useLocation();
   const item = location.state;
-  console.log(item);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

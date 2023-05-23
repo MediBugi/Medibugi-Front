@@ -21,7 +21,6 @@ function Searchdoc(props) {
           <Selectclinic
             getDataFromChild={getDataFromChild}
             currentLocation={location.address.split(" ")}
-            // currentLocation={location.address.split(" ")}
           />
         </div>
       </div>

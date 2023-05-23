@@ -1,7 +1,8 @@
 import "./Info.css";
 
-function HosInfo({ item }) {
+function HosInfo({ item, hosGrade, reviewCount }) {
   const telNum = `tel:${item.telno}`;
+
   return (
     <>
       {/* <section className="font-size"> */}
@@ -22,10 +23,13 @@ function HosInfo({ item }) {
               </a>
             </div>
             <div className="header_3">
-              병원 홈페이지 : <a href={item.hospUrl}>{item.hospUrl}</a>
+              병원 홈페이지 :{" "}
+              <a href={item.hospUrl} target="_blank">
+                {item.hospUrl}
+              </a>
             </div>
-            {/* <div className="header_3">평점</div>
-            <div className="header_3">리뷰 수</div> */}
+            <div className="header_3">평점 : {hosGrade}</div>
+            <div className="header_3">리뷰 수 : {reviewCount}</div>
           </div>
         </div>
       </section>

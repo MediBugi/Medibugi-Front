@@ -50,3 +50,46 @@ body {
   border: none;
   cursor: pointer;
 }
+
+.Review-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 22px 0 18px;
+  overflow: hidden;
+  margin: 0 0 4px;
+  border-bottom: 1px dashed #c5c5c5;
+}
+
+.Review-list-id {
+  margin-bottom: 0px;
+}
+
+.Review-list-date {
+  color: #bdbdbd;
+  font-size: 14px;
+  letter-spacing: -0.25px;
+}
+
+.Review-list-content {
+  color: #545357;
+  font-size: 17px;
+  line-height: 1.63;
+  letter-spacing: -0.2px;
+  overflow: hidden;
+}
+
+.Review-list-delete-button {
+  border: none;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: -0.28px;
+}
+
+.Review-list-rating {
+  margin-bottom: 8px;
+}
+
+.Review-list-date {
+  margin: 0 0 19px;
+}

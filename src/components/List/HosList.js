@@ -26,14 +26,24 @@ function getDistance(lat1, lng1, lat2, lng2) {
 function HosListItem({ item, departOption }) {
   const [isLogin, setIsLogin] = useState(false);
   const currentloc = CurrentLocation();
+  const depart = [item.mediDepart];
+  const departCheck = depart.map((depart) => {
+    if (!depart) {
+      return;
+    }
+    if (depart.includes(departOption)) {
+      return (
+        <>
+          {depart.split(departOption)[0]}
+          <span className="depart depart-check">{departOption}</span>
+          {depart.split(departOption)[1]}
+        </>
+      );
+    } else {
+      return depart;
+    }
+  });
 
-  // const mediDepart = () => {
-  //   if (item.mediDepart.includes(departOption)) {
-  //     return depart;
-  //   } else {
-  //     return depart;
-  //   }
-  // };
   useEffect(() => {
     if (sessionStorage.getItem("user")) {
       setIsLogin(true);
@@ -55,7 +65,7 @@ function HosListItem({ item, departOption }) {
         <div>병원구분 : {item.clCdNm} </div>
       </div>
       <div>
-        <div>진료과목 : {item.mediDepart}</div>
+        <div>진료과목 : {departCheck}</div>
       </div>
       <div>
         <div>
@@ -104,7 +114,7 @@ function HosList({ items, pageFlag, departOption }) {
         <Pagination
           activePage={page} // 현재 페이지
           itemsCountPerPage={limit} // 한 페이지당 보여줄 아이템 갯수
-          totalItemsCount={Math.ceil(items.length / limit)} // 총 아이템 갯수
+          totalItemsCount={items.length} // 총 아이템 갯수
           pageRangeDisplayed={5} // paginator의 페이지 범위
           prevPageText={"‹"} // "이전"을 나타낼 텍스트
           nextPageText={"›"} // "다음"을 나타낼 텍스트

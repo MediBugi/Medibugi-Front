@@ -1,4 +1,3 @@
-import axios from "axios";
 export async function getHosInfo({ sido, sggu, depart }) {
   const query = `sido=${sido}&sggu=${sggu}&depart=${depart}`;
   const response = await fetch(
@@ -8,8 +7,9 @@ export async function getHosInfo({ sido, sggu, depart }) {
   return body;
 }
 
-export async function createReview(formData) {
-  const response = await fetch(``, {
+export async function createReview({ formData, memberid, hoscnt }) {
+  const query = `memberid=${memberid}&hoscnt=${hoscnt}`;
+  const response = await fetch(`http://localhost:8080/review/add?${query}`, {
     method: "POST",
     body: formData,
   });
@@ -20,25 +20,24 @@ export async function createReview(formData) {
   return body;
 }
 
-export const getDirections = async (startLat, startLng, endLat, endLng) => {
-  const url = `/map-direction/v1/driving?start=${startLng},${startLat}&goal=${endLng},${endLat}`;
+export async function getReviews({ hoscnt }) {
+  const response = await fetch(
+    `http://localhost:8080/review/getReview?hoscnt=${hoscnt}`
+  );
+  const body = await response.json();
+  return body;
+}
 
-  try {
-    const response = await fetch(url, {
-      headers: {
-        "X-NCP-APIGW-API-KEY-ID": "uqmidslyyv",
-        "X-NCP-APIGW-API-KEY": "QcEMTyfnGmC3y5jyWiFRIxnkBzuzupW7WTa7VxQN",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error("Request failed");
+export async function deleteReview({ memberid, reviewCnt }) {
+  const response = await fetch(
+    `http://localhost:8080/review/delete?memberid=${memberid}&reviewCnt=${reviewCnt}`,
+    {
+      method: "POST",
     }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching directions:", error);
-    throw error;
+  );
+  if (!response.ok) {
+    throw new Error("리뷰를 삭제하는데 실패했습니다.");
   }
-};
+  const body = await response.json();
+  return body;
+}

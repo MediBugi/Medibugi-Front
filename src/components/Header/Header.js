@@ -18,7 +18,12 @@ function Header(props) {
       <Navbar>
         <Container>
           <Navbar.Brand href="/">
-            <img src="img/logo.png" width="170" height="45" alt="logo" />
+            <img
+              src="http://localhost:3000/img/logo.png"
+              width="170"
+              height="45"
+              alt="logo"
+            />
           </Navbar.Brand>
           <Nav className="justify-content-end">
             {props.isLogin ? (

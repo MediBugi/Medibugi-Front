@@ -76,6 +76,57 @@ function getDistance(lat1, lng1, lat2, lng2) {
   var d = R * c; // Distance in km
   return d;
 }
+function setHosOpen(item) {
+  const date = new Date();
+  const time = date.toTimeString();
+  const hour = Number(time[0] + time[1] + time[3] + time[4]);
+  switch (date.getDay()) {
+    case 0:
+      if (Number(item.chSunStart) < hour && hour < Number(item.chSunEnd)) {
+        return item;
+      } else {
+        return;
+      }
+    case 1:
+      if (Number(item.chMonStart) < hour && hour < Number(item.chMonEnd)) {
+        return item;
+      } else {
+        return;
+      }
+    case 2:
+      if (Number(item.chTueStart) < hour && hour < Number(item.chTueEnd)) {
+        return item;
+      } else {
+        return;
+      }
+    case 3:
+      if (Number(item.chWenStart) < hour && hour < Number(item.chWenEnd)) {
+        return item;
+      } else {
+        return;
+      }
+    case 4:
+      if (Number(item.chThuStart) < hour && hour < Number(item.chThuEnd)) {
+        return item;
+      } else {
+        return;
+      }
+    case 5:
+      if (Number(item.chFriStart) < hour && hour < Number(item.chFriEnd)) {
+        return item;
+      } else {
+        return;
+      }
+    case 6:
+      if (Number(item.chSatStart) < hour && hour < Number(item.chSatEnd)) {
+        return item;
+      } else {
+        return;
+      }
+    default:
+      return;
+  }
+}
 function SearchDoctor() {
   const location = useLocation();
   let id;
@@ -90,7 +141,6 @@ function SearchDoctor() {
     page: false,
   });
   const [isLoading, setIsLoading] = useState(false);
-  const date = new Date();
 
   const currentloc = CurrentLocation();
 
@@ -98,13 +148,22 @@ function SearchDoctor() {
     setIsLoading(true);
     const items = await getHosInfo(options);
 
-    let copy = [...items];
+    const rmNullLocation = items.map((item) => {
+      if (!item.x || (!item.chMonEnd && !item.chTueEnd && !item.chWedEnd)) {
+        return;
+      } else {
+        return setHosOpen(item);
+      }
+    });
+
+    let copy = rmNullLocation.filter((item) => item != null);
     copy.sort(
       (a, b) =>
         getDistance(currentloc.latitude, currentloc.longitude, a.y, a.x) -
         getDistance(currentloc.latitude, currentloc.longitude, b.y, b.x)
     );
     setIsLoading(false);
+    console.log(copy);
     setItems(copy);
   };
 
@@ -121,6 +180,7 @@ function SearchDoctor() {
       sggu: `${paramOptions.sggu}`,
       depart: `${paramOptions.depart}`,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [paramOptions.sido, paramOptions.sggu, paramOptions.depart]);
 
   return (
