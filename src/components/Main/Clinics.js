@@ -68,7 +68,7 @@ function Clinics() {
     });
     delete configuration.baseOptions.headers["User-Agent"];
     const openai = new OpenAIApi(configuration);
-
+    setLoading(true);
     const response = await openai
       .createCompletion({
         model: "text-davinci-003",

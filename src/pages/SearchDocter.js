@@ -165,7 +165,7 @@ function SearchDoctor() {
         getDistance(currentloc.latitude, currentloc.longitude, b.y, b.x)
     );
     setIsLoading(false);
-    console.log(copy);
+
     setItems(copy);
   };
 
