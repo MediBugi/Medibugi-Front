@@ -7,6 +7,7 @@ import SearchDoctor from "./pages/SearchDocter";
 import Info from "./pages/Info";
 import MyChart from "./pages/MyChart";
 import MyDocter from "./pages/MyDocter";
+import Topbutton from "./components/Topbutton/Topbutton";
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -21,6 +22,7 @@ function App() {
     <>
       <Header isLogin={isLogin} />
       <Menu isLogin={isLogin}/>
+      <Topbutton/>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="infolist">
