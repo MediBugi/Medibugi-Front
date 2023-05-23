@@ -81,16 +81,6 @@ function HosListItem({ item, departOption }) {
       <div>
         <span className="hoslist-title">진료과목 : </span>
         <span className="hoslist-detail">{departCheck}</span>
-        <div>
-          거리 :{" "}
-          {getDistance(
-            currentloc.latitude,
-            currentloc.longitude,
-            item.y,
-            item.x
-          )}
-          km
-        </div>
       </div>
     </div>
   );

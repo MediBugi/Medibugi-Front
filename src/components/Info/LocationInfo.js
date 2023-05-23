@@ -1,8 +1,10 @@
 import CurrentLocation from "./CurrentLocation";
-import "./Info.css";
 import NaverMapApi from "./Map/NaverMapApi";
 import { Container as MapDiv, NavermapsProvider } from "react-naver-maps";
 import { Link } from "react-router-dom";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import "./Info.css";
 
 function LocationInfo({ item }) {
   const currentloc = CurrentLocation();
@@ -24,11 +26,11 @@ function LocationInfo({ item }) {
             </MapDiv>
           </NavermapsProvider>
         </div>
-        <button>
-          <Link target="_blank" to={url}>
+        <Button variant="contained" endIcon={<SendIcon/>}>
+          <Link className="locaBtn" target="_blank" to={url}>
             길찾기
           </Link>
-        </button>
+        </Button>
       </section>
     </>
   );

@@ -27,7 +27,7 @@ function Info() {
       <div className="main">
         <div className="p">병원 정보</div>
         <div className="info-main">
-          <InfoList item={item}></InfoList>;
+          <InfoList item={item}></InfoList>
         </div>
       </div>
     </>
