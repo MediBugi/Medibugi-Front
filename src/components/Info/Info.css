@@ -156,3 +156,12 @@ li {
   font-weight: lighter;
   /*color: black;*/
 }
+
+.locaBtn {
+  color: white;
+  text-decoration: none;
+}
+
+.locaBtn:hover {
+  color:white;
+}
