@@ -10,7 +10,6 @@ const CurrentLocation = () => {
     let geocoder = new kakao.maps.services.Geocoder();
     let coord = new kakao.maps.LatLng(lat, lng);
     let callback = function (result, status) {
-      console.log(result);
       if (status === kakao.maps.services.Status.OK) {
         if (result[0].road_address)
           setAddress(result[0].road_address.address_name);

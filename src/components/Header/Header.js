@@ -1,10 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import SignupComplete from "../../pages/SingupComplete";
+import { useEffect } from "react";
 
 function Header(props) {
   const onClickLogout = () => {
@@ -26,7 +27,9 @@ function Header(props) {
           </Navbar.Brand>
           <Nav className="justify-content-end">
             {props.isLogin ? (
-              <Nav.Link href="/" onClick={onClickLogout}>로그아웃</Nav.Link>
+              <Nav.Link href="/" onClick={onClickLogout}>
+                로그아웃
+              </Nav.Link>
             ) : (
               <>
                 <Nav.Link href="/login">로그인</Nav.Link>
