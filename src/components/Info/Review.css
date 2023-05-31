@@ -93,3 +93,15 @@ body {
 .Review-list-date {
   margin: 0 0 19px;
 }
+
+.Review-Sort-button {
+  background-color:transparent;
+  color:gray;
+  border: none;
+  font-size: 17px;
+}
+
+.Review-Sort-button:focus {
+  font-weight: bold;
+  color:black;
+}

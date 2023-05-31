@@ -111,8 +111,8 @@ function Review({ item, data, getReviewCount }) {
           </div>
         )}
         <div>
-          <button onClick={handleNewestClick}>최신순</button>
-          <button onClick={handleBestClick}>베스트순</button>
+          <button className="Review-Sort-button" onClick={handleNewestClick}>최신순</button>
+          <button className="Review-Sort-button" onClick={handleBestClick}>베스트순</button>
         </div>
         <div className="Review-ReviewList">
           {sortedItems.map((item) => {
