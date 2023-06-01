@@ -272,7 +272,6 @@ function SearchDoctor() {
                       </Link>
                     </div>
                   ))
-                  .slice(0, 4)
               : null}
           </div>
         </>

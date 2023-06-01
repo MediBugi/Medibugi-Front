@@ -18,8 +18,10 @@ function Info() {
     }
 
     recent_search.unshift(item);
-    recent_search = new Set(recent_search.map(JSON.stringify));
-    recent_search = [...recent_search].map(JSON.parse);
+    recent_search = [...new Map(recent_search.map((m) => [m.hoscnt, m])).values()];
+    if (recent_search.length > 4) {
+      recent_search.length = 4;
+    }
     localStorage.setItem("data", JSON.stringify(recent_search));
   }, []);
   return (

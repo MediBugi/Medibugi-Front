@@ -16,7 +16,6 @@ function DisableBtn(props) {
         params: { member_id: props.data },
       })
       .then((res) => {
-        console.log(res.data);
         for (var i = 0; i < res.data.length; i++) {
           if (props.item.yadmNm === res.data.at(i).yadmNm) {
             setActiveButton("button1");
@@ -35,13 +34,13 @@ function DisableBtn(props) {
   }, []);
 
   useEffect(() => {
-    getFavInfo();
+    {
+      isLogin && getFavInfo();
+    }
   }, [isLogin]);
 
   const Click1 = (event) => {
-    handleButtonClick("button1");
     event.preventDefault();
-    alert("즐겨찾기에 추가 되었습니다!");
     axios
       .post("http://13.209.244.206:8080/favorite/add", {
         member_id: props.data,
@@ -49,6 +48,8 @@ function DisableBtn(props) {
       })
       .then((response) => {
         console.log(response.data);
+        handleButtonClick("button1");
+        alert("즐겨찾기에 추가 되었습니다!");
       })
       .catch((error) => {
         console.log(error);
@@ -57,9 +58,7 @@ function DisableBtn(props) {
   };
 
   const Click2 = (event) => {
-    handleButtonClick("button2");
     event.preventDefault();
-    alert("즐겨찾기에서 삭제 되었습니다!");
     axios
       .post("http://13.209.244.206:8080/favorite/delete", {
         member_id: props.data,
@@ -67,6 +66,8 @@ function DisableBtn(props) {
       })
       .then((response) => {
         console.log(response.data);
+        handleButtonClick("button2");
+        alert("즐겨찾기에서 삭제 되었습니다!");
       })
       .catch((error) => {
         console.log(error);
