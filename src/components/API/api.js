@@ -1,7 +1,7 @@
-export async function getHosInfo({ sido, sggu, depart }) {
-  const query = `sido=${sido}&sggu=${sggu}&depart=${depart}`;
+export async function getHosInfo({ sido, sggu, depart, search }) {
+  const query = `sido=${sido}&sggu=${sggu}&depart=${depart}&name=${search}`;
   const response = await fetch(
-    `http://localhost:8080/getHospitalListByLocation?${query}`
+    `http://13.209.244.206:8080/getHospitalListByLocation?${query}`
   );
   const body = await response.json();
   return body;
@@ -9,10 +9,13 @@ export async function getHosInfo({ sido, sggu, depart }) {
 
 export async function createReview({ formData, memberid, hoscnt }) {
   const query = `memberid=${memberid}&hoscnt=${hoscnt}`;
-  const response = await fetch(`http://localhost:8080/review/add?${query}`, {
-    method: "POST",
-    body: formData,
-  });
+  const response = await fetch(
+    `http://13.209.244.206:8080/review/add?${query}`,
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
   if (!response.ok) {
     throw new Error("리뷰를 생성하는데 실패했습니다");
   }
@@ -22,7 +25,7 @@ export async function createReview({ formData, memberid, hoscnt }) {
 
 export async function getReviews({ hoscnt }) {
   const response = await fetch(
-    `http://localhost:8080/review/getReview?hoscnt=${hoscnt}`
+    `http://13.209.244.206:8080/review/getReview?hoscnt=${hoscnt}`
   );
   const body = await response.json();
   return body;
@@ -30,7 +33,7 @@ export async function getReviews({ hoscnt }) {
 
 export async function deleteReview({ memberid, reviewCnt }) {
   const response = await fetch(
-    `http://localhost:8080/review/delete?memberid=${memberid}&reviewCnt=${reviewCnt}`,
+    `http://13.209.244.206:8080/review/delete?memberid=${memberid}&reviewCnt=${reviewCnt}`,
     {
       method: "POST",
     }

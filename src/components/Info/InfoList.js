@@ -13,6 +13,7 @@ function InfoList({ item }) {
     setHosGrade(grade);
     setReviewCount(length);
   };
+
   return (
     <>
       <DisableBtn item={item} data={data}></DisableBtn>

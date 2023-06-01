@@ -15,7 +15,7 @@ function Loginbutton(props) {
       return alert("비밀번호를 입력하세요");
     } else {
       axios
-        .post("http://localhost:8080/member/login", {
+        .post("http://13.209.244.206:8080/member/login", {
           memberid: id,
           password: pw,
         })

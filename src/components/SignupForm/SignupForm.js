@@ -25,7 +25,7 @@ function SignupForm() {
     } else {
       const payload = new FormData(form);
       axios
-        .post("http://localhost:8080/member/signup", payload, {
+        .post("http://13.209.244.206:8080/member/signup", payload, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -49,7 +49,7 @@ function SignupForm() {
       setExplain("아이디를 입력해 주세요");
     } else {
       axios
-        .post("http://localhost:8080/member/checkId", {
+        .post("http://13.209.244.206:8080/member/checkId", {
           memberid: inputId,
         })
         .then((res) => {

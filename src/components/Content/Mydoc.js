@@ -7,16 +7,16 @@ function Mydoc() {
   const [data, setData] = useState([]);
   async function getMyInfo() {
     var id = sessionStorage.getItem("user");
-      await axios
-        .get("http://localhost:8080/favorite/getFavoriteList", {
-          params: { member_id: id },
-        })
-        .then((res) => {
-          setData(res.data);
-        })
-        .catch((err) => {
-          console.log("error: ", err.res);
-        });
+    await axios
+      .get("http://13.209.244.206:8080/favorite/getFavoriteList", {
+        params: { member_id: id },
+      })
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log("error: ", err.res);
+      });
   }
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function Mydoc() {
 
   return (
     <div className="content_chart">
-        <ChartDoc data={data}></ChartDoc>
+      <ChartDoc data={data}></ChartDoc>
     </div>
   );
 }

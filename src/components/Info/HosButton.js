@@ -12,7 +12,7 @@ function DisableBtn(props) {
   };
   async function getFavInfo() {
     await axios
-      .get("http://localhost:8080/favorite/getFavoriteList", {
+      .get("http://13.209.244.206:8080/favorite/getFavoriteList", {
         params: { member_id: props.data },
       })
       .then((res) => {
@@ -29,20 +29,21 @@ function DisableBtn(props) {
   }
 
   useEffect(() => {
-    {
-      isLogin && getFavInfo();
-    }
     if (sessionStorage.getItem("user")) {
       setIsLogin(true);
     }
   }, []);
+
+  useEffect(() => {
+    getFavInfo();
+  }, [isLogin]);
 
   const Click1 = (event) => {
     handleButtonClick("button1");
     event.preventDefault();
     alert("즐겨찾기에 추가 되었습니다!");
     axios
-      .post("http://localhost:8080/favorite/add", {
+      .post("http://13.209.244.206:8080/favorite/add", {
         member_id: props.data,
         hoscnt: props.item.hoscnt,
       })
@@ -60,7 +61,7 @@ function DisableBtn(props) {
     event.preventDefault();
     alert("즐겨찾기에서 삭제 되었습니다!");
     axios
-      .post("http://localhost:8080/favorite/delete", {
+      .post("http://13.209.244.206:8080/favorite/delete", {
         member_id: props.data,
         hoscnt: props.item.hoscnt,
       })

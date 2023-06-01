@@ -1,11 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import SignupComplete from "../../pages/SingupComplete";
-import { useEffect } from "react";
 
 function Header(props) {
   const onClickLogout = () => {

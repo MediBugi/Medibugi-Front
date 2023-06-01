@@ -105,7 +105,7 @@ li {
 }
 
 .hos_list_top {
-  margin-top: 146px;
+  margin-top: 200px;
 }
 
 .addFav {
@@ -163,5 +163,5 @@ li {
 }
 
 .locaBtn:hover {
-  color:white;
+  color: white;
 }

@@ -74,12 +74,13 @@ function Clinics() {
         model: "text-davinci-003",
         prompt: `너가 의사라고 가정하고, ${userInfo}증상이 있을 때 가야 할 medical department를 알려줘`,
         temperature: 0,
-        max_tokens: 1000,
+        max_tokens: 2000,
       })
       .then((res) => {
         const { choices } = res.data;
         setRecommend(choices[0].text);
         setLoading(false);
+        console.log(choices);
       });
 
     return response;

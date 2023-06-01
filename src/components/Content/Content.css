@@ -18,6 +18,18 @@
   float: left; /* 나란히 정렬*/
 }
 
+.content-top {
+  background-color: white;
+
+  margin-left: 250px;
+  margin-top: 150px;
+  width: 1053px;
+  float: left;
+  position: absolute;
+  padding: 4px;
+  float: left; /* 나란히 정렬*/
+}
+
 .interest-doc {
   font-weight: bold;
   font-family: "나눔고딕";

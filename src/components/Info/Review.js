@@ -48,7 +48,6 @@ function Review({ item, data, getReviewCount }) {
   const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [reviewData, setReviewData] = useState([]);
-  const [grade, setGrade] = useState(0);
   const sortedItems = reviewData.sort((a, b) => b[sort] - a[sort]);
 
   const handleNewestClick = () => setSort("writeTime");
@@ -80,7 +79,6 @@ function Review({ item, data, getReviewCount }) {
     const sum = item.reduce((acc, current) => acc + current.rating, 0);
     return (sum / item.length).toFixed(1);
   };
-  getReviewCount({ grade: getGrade(reviewData), length: reviewData.length });
 
   useEffect(() => {
     if (sessionStorage.getItem("user")) {
@@ -91,6 +89,10 @@ function Review({ item, data, getReviewCount }) {
   useEffect(() => {
     handleLoad({ hoscnt: item.hoscnt });
   }, [item.hoscnt]);
+
+  useEffect(() => {
+    getReviewCount({ grade: getGrade(reviewData), length: reviewData.length });
+  }, [reviewData]);
   return (
     <>
       <section className="Review-container font-size">

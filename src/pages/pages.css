@@ -9,29 +9,29 @@
 }
 
 .log-p {
-    position: absolute;
-    color:#555;
-    font-weight: bold;
-    font-size: 28px;
-    width: 100px;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    margin-left: -50px;
-    margin-top:-170px;
+  position: absolute;
+  color: #555;
+  font-weight: bold;
+  font-size: 28px;
+  width: 100px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -170px;
 }
 
 .sign-p {
-    position: absolute;
-    color:#555;
-    font-weight: bold;
-    font-size: 28px;
-    width: 120px;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    margin-left: -40px;
-    margin-top:-250px;
+  position: absolute;
+  color: #555;
+  font-weight: bold;
+  font-size: 28px;
+  width: 120px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -250px;
 }
 
 .main {
@@ -54,13 +54,13 @@
 
 .complete-p {
   position: absolute;
-  color:#555;
+  color: #555;
   font-size: 25px;
   z-index: 1;
   top: 50%;
   left: 50%;
   margin-left: -150px;
-  margin-top:-50px;
+  margin-top: -50px;
 }
 
 .home-btn {
@@ -88,9 +88,9 @@
 
 .recent {
   border: 1px solid #dbdbdb;
-  position: fixed; 
-  right: 50%; 
-  top: 380px; 
+  position: fixed;
+  right: 50%;
+  top: 380px;
   margin-right: -750px;
   width: 13%;
   background-color: white;
@@ -110,13 +110,66 @@
 }
 
 .recent-hos {
-  color:#4b4040;
+  color: #4b4040;
   text-decoration-line: none;
   margin-left: 10px;
   font-size: 15px;
 }
 
-.recent-hos:hover{
+.recent-hos:hover {
   text-decoration-line: underline;
-  color:#4b4040;
+  color: #4b4040;
+}
+
+.sortbutton-container {
+  flex: 1, 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SortButton.selected {
+  color: #1b9cff;
+  position: relative;
+}
+
+.SortButton {
+  font-size: 16px;
+  color: #2b302f;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.SortButton:not(:last-child) {
+  margin-right: 20px;
+}
+
+.SortButton:disabled {
+  cursor: default;
+}
+
+.search {
+  position: relative;
+}
+
+.search-input {
+  width: 250px;
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+}
+.search-button {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  align-items: center;
 }

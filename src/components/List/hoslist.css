@@ -6,10 +6,6 @@
   border-bottom: 1px solid #dbdbdb;
 }
 
-.hos_list_top {
-  margin-top: 146px;
-}
-
 .hoslist-pagination {
   display: flex;
   justify-content: center;
@@ -26,7 +22,8 @@
   text-decoration-line: none;
   font-weight: bold;
   color: #4b4040;
-  font-size: 19px;
+  font-size: 23px;
+  margin-bottom: 10px;
 }
 
 .hoslist-name:hover {
@@ -42,6 +39,12 @@
 .hoslist-detail {
   font-size: 18px;
   color: #2d2828;
+}
+.hoslist-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
 }
 .depart {
   display: inline;

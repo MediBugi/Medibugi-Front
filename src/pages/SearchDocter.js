@@ -77,7 +77,7 @@ function getDistance(lat1, lng1, lat2, lng2) {
   return d;
 }
 function setHosOpen(item) {
-  const date = new Date("May 23, 2023 14:00:00");
+  const date = new Date("May, 21 2023 11:00:00");
   const time = date.toTimeString();
   const hour = Number(time[0] + time[1] + time[3] + time[4]);
   switch (date.getDay()) {
@@ -127,12 +127,25 @@ function setHosOpen(item) {
       return;
   }
 }
+
+function SortButton({ selected, children, onClick }) {
+  return (
+    <button
+      disabled={selected}
+      className={`SortButton ${selected ? "selected" : ""}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
+
 function SearchDoctor() {
   const location = useLocation();
   let id;
   if (!location.state) id = 0;
   else id = location.state;
-
+  const [sort, setSort] = useState("direction");
   const [items, setItems] = useState([]);
   const [paramOptions, setParamOptions] = useState({
     sido: undefined,
@@ -140,12 +153,31 @@ function SearchDoctor() {
     depart: department[id],
     page: false,
   });
-  const [isLoading, setIsLoading] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [search, setSearch] = useState("");
   const currentloc = CurrentLocation();
 
   const recent_search = JSON.parse(localStorage.getItem("data"));
+  const sortedItems = () => {
+    if (sort === "direction") {
+      return items.sort(
+        (a, b) =>
+          getDistance(currentloc.latitude, currentloc.longitude, a.y, a.x) -
+          getDistance(currentloc.latitude, currentloc.longitude, b.y, b.x)
+      );
+    } else {
+      return items.sort((a, b) => b[sort] - a[sort]);
+    }
+  };
+  const sortedItem = sortedItems();
+  const handleBestClick = () => {
+    setSort("rating");
+  };
 
+  const handleNearClick = () => {
+    setSort("direction");
+  };
   const handleLoad = async (options) => {
     setIsLoading(true);
     const items = await getHosInfo(options);
@@ -159,14 +191,13 @@ function SearchDoctor() {
     });
 
     let copy = rmNullLocation.filter((item) => item != null);
-    copy.sort(
-      (a, b) =>
-        getDistance(currentloc.latitude, currentloc.longitude, a.y, a.x) -
-        getDistance(currentloc.latitude, currentloc.longitude, b.y, b.x)
-    );
     setIsLoading(false);
-
     setItems(copy);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    setSearch(e.target["search"].value);
   };
 
   useEffect(() => {
@@ -181,9 +212,10 @@ function SearchDoctor() {
       sido: `${paramOptions.sido}`,
       sggu: `${paramOptions.sggu}`,
       depart: `${paramOptions.depart}`,
+      search: search,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [paramOptions.sido, paramOptions.sggu, paramOptions.depart]);
+  }, [paramOptions.sido, paramOptions.sggu, paramOptions.depart, search]);
 
   return (
     <>
@@ -191,13 +223,35 @@ function SearchDoctor() {
         <div className="p">병원찾기</div>
         <Searchdoc setData={setParamOptions} currentLocation={currentloc} />
       </div>
+      <div className="content-top search-flex">
+        <form className="search" onSubmit={handleSearchSubmit}>
+          <input
+            className="search-input"
+            name="search"
+            placeholder="병원 이름"
+          />
+          <button className="search-button" type="submit">
+            <img src={"/img/ic-search.png"} alt="검색" />
+          </button>
+        </form>
+        <div>
+          <SortButton selected={sort === "direction"} onClick={handleNearClick}>
+            거리순
+          </SortButton>
+          <SortButton selected={sort === "rating"} onClick={handleBestClick}>
+            베스트순
+          </SortButton>
+        </div>
+      </div>
       <div className="content hos_list_top">
         {!isLoading && (
-          <HosList
-            items={items}
-            pageFlag={paramOptions.page}
-            departOption={paramOptions.depart}
-          />
+          <>
+            <HosList
+              items={items}
+              pageFlag={paramOptions.page}
+              departOption={paramOptions.depart}
+            />
+          </>
         )}
       </div>
       {recent_search && !isLoading && (
@@ -207,7 +261,7 @@ function SearchDoctor() {
             {recent_search
               ? recent_search
                   .map((a, i) => (
-                    <div className="recent-hos-div">
+                    <div className="recent-hos-div" key={a.hoscnt}>
                       ·
                       <Link
                         className="recent-hos"

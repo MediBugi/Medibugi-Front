@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Pagination from "react-js-pagination";
 import CurrentLocation from "../Info/CurrentLocation";
+import { getReviews } from "../API/api";
 
 function getDistance(lat1, lng1, lat2, lng2) {
   function deg2rad(deg) {
@@ -51,9 +52,12 @@ function HosListItem({ item, departOption }) {
 
   return (
     <div className="hoslist">
-      <Link className="hoslist-name" to={"/infolist/info"} state={item}>
-        {item.yadmNm}
-      </Link>
+      <div className="hoslist-rating ">
+        <Link className="hoslist-name" to={"/infolist/info"} state={item}>
+          {item.yadmNm}
+        </Link>
+        <div className="hoslist-title">평점 : {item.rating}</div>
+      </div>
       <div>
         <span className="hoslist-title">거 &nbsp;&nbsp;&nbsp;&nbsp; 리 : </span>
         <span className="hoslist-detail">
@@ -102,6 +106,7 @@ function HosList({ items, pageFlag, departOption }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [page]);
+
   return (
     <>
       <ul>
