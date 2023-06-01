@@ -43,6 +43,18 @@ function ReviewList({ reviewData, data, onDelete }) {
   );
 }
 
+function SortButton({ selected, children, onClick }) {
+  return (
+    <button
+      disabled={selected}
+      className={`Review-Sort-button ${selected ? "selected" : ""}`}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
+
 function Review({ item, data, getReviewCount }) {
   const [sort, setSort] = useState("writeTime");
   const [isLogin, setIsLogin] = useState(false);
@@ -61,7 +73,7 @@ function Review({ item, data, getReviewCount }) {
 
     setReviewData(reviewList);
   };
-
+  console.log(item.code);
   const handleCreateSuccess = (item) => {
     setReviewData((pre) => [item, ...pre]);
   };
@@ -87,8 +99,8 @@ function Review({ item, data, getReviewCount }) {
   }, []);
 
   useEffect(() => {
-    handleLoad({ hoscnt: item.hoscnt });
-  }, [item.hoscnt]);
+    handleLoad({ code: item.code });
+  }, [item.code]);
 
   useEffect(() => {
     getReviewCount({ grade: getGrade(reviewData), length: reviewData.length });
@@ -113,8 +125,15 @@ function Review({ item, data, getReviewCount }) {
           </div>
         )}
         <div>
-          <button className="Review-Sort-button" onClick={handleNewestClick}>최신순</button>
-          <button className="Review-Sort-button" onClick={handleBestClick}>베스트순</button>
+          <SortButton
+            selected={sort === "writeTime"}
+            onClick={handleNewestClick}
+          >
+            최신순
+          </SortButton>
+          <SortButton selected={sort === "rating"} onClick={handleBestClick}>
+            베스트순
+          </SortButton>
         </div>
         <div className="Review-ReviewList">
           {sortedItems.map((item) => {

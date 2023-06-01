@@ -52,11 +52,13 @@ function HosListItem({ item, departOption }) {
 
   return (
     <div className="hoslist">
-      <div className="hoslist-rating ">
+      <div className="hoslist-rating">
         <Link className="hoslist-name" to={"/infolist/info"} state={item}>
           {item.yadmNm}
         </Link>
-        <div className="hoslist-title">평점 : {item.rating}</div>
+        <div className="hoslistitem-rating">
+          평점 : {item.rating.toFixed(1)}
+        </div>
       </div>
       <div>
         <span className="hoslist-title">거 &nbsp;&nbsp;&nbsp;&nbsp; 리 : </span>

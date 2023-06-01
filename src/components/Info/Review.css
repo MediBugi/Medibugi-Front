@@ -95,13 +95,14 @@ body {
 }
 
 .Review-Sort-button {
-  background-color:transparent;
-  color:gray;
+  background-color: transparent;
+  color: gray;
   border: none;
-  font-size: 17px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.Review-Sort-button:focus {
+.Review-Sort-button.selected {
   font-weight: bold;
-  color:black;
+  color: #1b9cff;
 }

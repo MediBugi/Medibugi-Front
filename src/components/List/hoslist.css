@@ -52,3 +52,12 @@
 .depart-check {
   color: blue;
 }
+
+.hoslistitem-rating {
+  padding: 6px 8px 5px;
+  border-radius: 6px;
+  background-color: #eaf3ea;
+  font-size: 15px;
+  font-weight: bold;
+  color: #41acff;
+}

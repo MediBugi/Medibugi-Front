@@ -77,7 +77,7 @@ function getDistance(lat1, lng1, lat2, lng2) {
   return d;
 }
 function setHosOpen(item) {
-  const date = new Date("May, 21 2023 11:00:00");
+  const date = new Date("June, 2 2023 15:00:00");
   const time = date.toTimeString();
   const hour = Number(time[0] + time[1] + time[3] + time[4]);
   switch (date.getDay()) {
@@ -159,6 +159,7 @@ function SearchDoctor() {
   const currentloc = CurrentLocation();
 
   const recent_search = JSON.parse(localStorage.getItem("data"));
+  console.log(JSON.parse(localStorage.getItem("data")));
   const sortedItems = () => {
     if (sort === "direction") {
       return items.sort(
@@ -259,19 +260,18 @@ function SearchDoctor() {
           <div className="recent">
             <p className="recent-title">최근 본 병원</p>
             {recent_search
-              ? recent_search
-                  .map((a, i) => (
-                    <div className="recent-hos-div" key={a.hoscnt}>
-                      ·
-                      <Link
-                        className="recent-hos"
-                        to={"/infolist/info"}
-                        state={recent_search[i]}
-                      >
-                        {recent_search[i].yadmNm}
-                      </Link>
-                    </div>
-                  ))
+              ? recent_search.map((a, i) => (
+                  <div className="recent-hos-div" key={a.hoscnt}>
+                    ·
+                    <Link
+                      className="recent-hos"
+                      to={"/infolist/info"}
+                      state={recent_search[i]}
+                    >
+                      {recent_search[i].yadmNm}
+                    </Link>
+                  </div>
+                ))
               : null}
           </div>
         </>
