@@ -159,7 +159,16 @@ function SearchDoctor() {
   const currentloc = CurrentLocation();
 
   const recent_search = JSON.parse(localStorage.getItem("data"));
-  console.log(JSON.parse(localStorage.getItem("data")));
+  const recent_search_fix = () => {
+    for (let i = 1; i < recent_search.length; i++) {
+      if (recent_search[0].code === recent_search[i].code) {
+        recent_search.splice(i, 1);
+        i--;
+      }
+    }
+  };
+  recent_search_fix();
+
   const sortedItems = () => {
     if (sort === "direction") {
       return items.sort(

@@ -11,7 +11,7 @@ function Star({ selected = false, rating = 0, onSelect, onHover }) {
 
   return (
     <span
-      className={className}
+      className={`${className} star`}
       onClick={handleClick}
       onMouseOver={handleMouesOver}
     >

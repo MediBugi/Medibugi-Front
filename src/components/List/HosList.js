@@ -122,6 +122,7 @@ function HosList({ items, pageFlag, departOption }) {
       </ul>
       <div className="hoslist-pagination">
         <Pagination
+          className={"pagination"}
           activePage={page} // 현재 페이지
           itemsCountPerPage={limit} // 한 페이지당 보여줄 아이템 갯수
           totalItemsCount={items.length} // 총 아이템 갯수

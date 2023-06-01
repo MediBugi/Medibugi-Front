@@ -14,14 +14,15 @@
 }
 
 .c3 .btn {
-  margin-top: 28px;
-  margin-left: 8px;
-  font-weight: bold;
-  background-color: #1b9cff;
+  margin: 20px;
+  font-weight: 500;
+  background-color: #41acff;
+  color: #eaeef3;
   border: 0 none;
-  border-radius: 2px;
+  border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
+
   text-align: center;
 }
 
@@ -33,5 +34,5 @@
 .c1,
 .c2,
 .c3 {
-  margin-bottom: 38px;
+  margin-bottom: 20px;
 }

@@ -24,12 +24,15 @@ function ReviewList({ reviewData, data, onDelete }) {
     }
   }, []);
   return (
-    <div className="Review-listt">
-      <p className="Review-list-id">{reviewData.memberid}</p>
+    <div className="Review-list">
+      <div className="Review-top">
+        <p className="Review-list-id">{reviewData.memberid}</p>
+        <p className="Review-list-date">
+          {formatDate(Number(reviewData.writeTime))}
+        </p>
+      </div>
       <Rating className="Review-list-rating" value={reviewData.rating} />
-      <p className="Review-list-date">
-        {formatDate(Number(reviewData.writeTime))}
-      </p>
+
       <p className="Review-list-content">{reviewData.content}</p>
       {isLogin && reviewData.memberid === data && (
         <button
@@ -124,7 +127,7 @@ function Review({ item, data, getReviewCount }) {
             />
           </div>
         )}
-        <div>
+        <div className="Review-Sortbutton">
           <SortButton
             selected={sort === "writeTime"}
             onClick={handleNewestClick}
@@ -147,7 +150,6 @@ function Review({ item, data, getReviewCount }) {
               </li>
             );
           })}
-          <div className="Review-load-more-button" />
         </div>
       </section>
     </>

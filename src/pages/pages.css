@@ -156,6 +156,9 @@
   width: 250px;
   background-color: transparent;
   border: 1px solid #dbdbdb;
+  border-radius: 15px;
+  font-size: 18px;
+  padding-left: 10px;
 }
 .search-button {
   position: absolute;

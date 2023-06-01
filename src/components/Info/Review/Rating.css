@@ -6,3 +6,7 @@
 .Rating-star.selected {
   color: #ffb700;
 }
+
+.Review-list-rating .star {
+  font-size: 20px;
+}
