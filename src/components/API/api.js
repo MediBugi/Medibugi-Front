@@ -23,9 +23,9 @@ export async function createReview({ formData, memberid, hoscnt }) {
   return body;
 }
 
-export async function getReviews({ code }) {
+export async function getReviews({ hoscnt }) {
   const response = await fetch(
-    `http://13.209.244.206:8080/review/getReview?code=${code}`
+    `http://13.209.244.206:8080/review/getReview?hoscnt=${hoscnt}`
   );
   const body = await response.json();
   return body;

@@ -102,8 +102,8 @@ function Review({ item, data, getReviewCount }) {
   }, []);
 
   useEffect(() => {
-    handleLoad({ code: item.code });
-  }, [item.code]);
+    handleLoad({ hoscnt: item.hoscnt });
+  }, [item.hoscnt]);
 
   useEffect(() => {
     getReviewCount({ grade: getGrade(reviewData), length: reviewData.length });
